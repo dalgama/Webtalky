@@ -9,8 +9,9 @@ Name: Olga Surzhok
 Student Number: 8317010
 
 Outline of the Application we will be building:
- - Post a note about a subject or event you are interested in and would like to start a conversation about this note.
- - Someone else will see your note and will repond if that person is interest in the same subject/event. 
- - After someone picks your note it changes into a chat platform between the two of users about the choosen suject/event. 
- - This platform is mainly to create a conversations between people who are interested in a common topic/event or subject.
- - Overtime if necessary the two users can exchange contacts if they find that they have a lot in common but this is conpletely upto the user.
+ - Post an anonymous note about a subject or event you are interested in and would like to start a conversation about.
+ - Once the note is sent, you will receive a note sent by another user and may respond if you are interested in the topic.
+ - A different user will see your note and will respond if they are interested in the same subject/event. 
+ - After someone picks your note (or you pick someone's note), it changes into a chat platform between the two of users.
+ - The chat lifetime is entirely up to users, as long as they keep replying within a defined timeframe, the chat remains.
+ - This platform's goal is to create a conversations between people who are interested in a common event or subject.
