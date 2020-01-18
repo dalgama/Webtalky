@@ -9,7 +9,7 @@ Name: Olga Surzhok
 Student Number: 8317010
 
 Outline of the Application we will be building:
- - Post an anonymous note about a subject or event you are interested in and would like to start a conversation about (during this process the user will fill a field with the general subject of their note eg. Olympics2020.
+ - Post an anonymous note about a subject or event you are interested in and would like to start a conversation about (during this process the user will fill a field with the general subject of their note eg. Olympics2020).
  - Once the note is sent, you will receive a note with the same or closely related to your notes general subject sent by another (random) user and you may respond if you are interested in the notes topic.
  - Likewise a different user will recieve your note and will respond if they are interested in your notes topic. 
  - After someone receives your note (or you recieve someone's note), it changes into a chat platform between the two of users while keeping both users personal details anonymous.
