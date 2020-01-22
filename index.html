@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<link rel="stylesheet" type="text/css" href="css/styles.css">
+	<title>
+		Webtalky Home
+	</title>
+	<div id="logo">
+		<img src="images/logo.png" width="380" height="100" alt="Webtalky">
+	</div>
+</head>
+<body>
+	<div id="logo">
+		<img src="images/logo.png" width="380" height="100" alt="Webtalky">
+	<H1 class = "heading">Welcome to Webtalky!</H1>
+
+	<!-- Introduction -->
+	<div class="intro">
+		<h3> Post anonymous notes</h3>
+		<p>Write a note and launch it on the Internet. Someone, far or close, will catch your note and respond. </p>
+		<p> Catch the notes of others and communicate with those who have the same interests.</p>
+		<div class="intro-chat">
+			<p>Like a <strong>CHAT</strong> where:</p>
+			<ul>
+				<li>No need to wait while the other person is typing.</li>
+				<li>Correspondence can last for months.</li>
+			</ul>
+			<p>Like a <strong>BLOG</strong> where:</p>
+			<ul>
+				<li>Each entry is guaranteed a reader.</li>
+				<li>Discussion  takes place in real time.</li>
+			</ul>
+			<p> How to <strong>SOCIAL NETWORK</strong> where</p>
+			<ul>
+				<li>No followers, news feeds or likes.</li>
+				<li>At any time of the day there is someone to talk to.</li>
+			</ul>
+		</div>
+	</div>
+	<hr>
+
+	<!-- Sign in form -->
+	<form action="php/action_page.php">
+		<div class="form-group">
+			<label for="email">Email address:</label>
+			<input type="email" class="form-control" placeholder="Email" id="email">
+		</div>
+		<div class="form-group">
+			<label for="pwd">Password:</label>
+			<input type="password" class="form-control" placeholder="Password" id="pwd">
+		</div>
+		<div class="form-group form-check">
+			<label class="form-check-label">
+				<input class="form-check-input" type="checkbox">Remember me</a>
+			</label>
+		</div>
+			<button type="sign-in" class="btn btn-primary">Sign In</button>
+			<button type="cancel" class="btn btn-primary">Cancel</button>
+	</form>
+	<hr>
+
+	<!-- Sign up form -->
+	<form action="php/action_page.php" >
+		<p>New to WebTalky? Join us.</p>
+		<div class="form-group">
+			<label for="email">Email address:</label>
+			<input type="email" class="form-control" placeholder="Your email" id="email" >
+		</div>
+		<div class="form-group">
+			<label for="pwd">Password:</label>
+			<input type="password" class="form-control" placeholder="Create a password" id="pwd" >
+			<br>
+			<small id="passwordHelpBlock" class="form-text text-muted">
+  			Your password must be 8-20 characters long, contain letters and numbers, and must not contain spaces or special characters.
+			</small>
+		</div>
+		<div class="form-group">
+			<label for="c_pwd">Confirm Password:</label>
+			<input type="password" class="form-control" placeholder="Confirm password" id="c_pwd">
+			<br>
+			<small id="passwordHelpBlock" class="form-text text-muted">
+  			Your password must be 8-20 characters long, contain letters and numbers, and must not contain spaces or special characters.
+			</small>
+		</div>
+		<div class="form-group form-check">
+			<label class="form-check-label">
+				<input class="form-check-input" type="checkbox"> I accept the <a href="https://www.youtube.com">user agreement</a>
+			</label>
+  		</div>
+  		<button type="submit" class="btn btn-primary">Submit</button>
+  		<button type="cancel" class="btn btn-primary">Cancel</button>
+	</form>
+</body>
+<footer>
+	<hr>
+	<div id = "footer" style="text-align:center">
+		<p><small>Copyright(c) 2020 by Dilanga and Olga.</br>All content of this website are the property of Dilanga and Olga.</small></p>
+	</div>
+</footer>
+</html>
