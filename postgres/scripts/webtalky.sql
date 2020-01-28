@@ -3,23 +3,36 @@ set search_path = "webtalky";
 alter role postgres set search_path to "webtalky";
 
 create table Users(
-    UserId INTEGER,
-    Name VARCHAR(20),
-    Password VARCHAR(20),
+    userid INTEGER,
+    email VARCHAR(20) CHECK (email NOT NULL),
+    password VARCHAR(20) CHECK (password >= 8 AND password <= 20),
+    topicid INTEGER,
+    intro VARCHAR(100)
     PRIMARY KEY (CustId)
+    FOREIGN KEY (TopicId)
 );
 
-create table Notes(
-    UserId INTEGER,
-    PRIMARY KEY (UserId)
+create table Topic(
+    topicid INTEGER,
+    name VARCHAR(20),
+    description VARCHAR(50)
+    PRIMARY KEY (topicid)
+);
+
+create table Conversation(
+    messageid INTEGER,
+    user1_id VARCHAR(20),
+    user2_id VARCHAR(50),
+    message VARCHAR(200),
+    topicid INTEGER
+    PRIMARY KEY (messageid)
+    FOREIGN KEY (topicid)
+    FOREIGN KEY (user1_id)
+    FOREIGN KEY (user2_id)
 );
 
 --clients
-insert into Users(UserId,FirstName,LastName,Email,Password) values (1,'Don','Algama','dalga082@uottawa.ca','admin');
-insert into Users(UserId,FirstName,LastName,Email,Password) values (2,'Olga','Surzhok','osurz015@uottawa.ca','admin');
-
-alter table Users add constraint password_range CHECK(
-    Rating >= 8 AND
-    Rating <= 20
-);
+INSERT INTO Users(userid,email,password,topicid,intro) 
+	values (1,'dalga082@uottawa.ca','admin','WWW',"I'm an admin"),
+		   (2,'osurz015@uottawa.ca','admin','WWW',"I'm an admin");
     
