@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<link rel="stylesheet" type="text/css" href="css/styles.css">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>
+		Webtalky Home
+	</title>
+	
+	<div id="logo">
+		<img src="images/logo.png" width="380" height="100" alt="Webtalky">
+	</div>
+</head>
+<body>
+	<H1 class = "heading">Welcome to Webtalky!</H1>
+	<!-- Introduction -->
+	<div class="intro">
+		<h2> Post anonymous notes!!</h2>
+		<p id="intro_para"> Choose a topic and connect with someone, far or close and start a conversation. </p>
+		<p id="intro_para"> Keep your privacy at ease and get connected with someone who has the same interests as you.</p>
+	</div>
+	<br>
+	<div class="center-info">
+		<div id= "promo">
+			<div class="circular">
+	  			<p>Like a <strong>CHAT</strong> where:</p>
+				<ul>
+					<li>No need to wait while the other person is typing.</li>
+					<li>Correspondence can last for months.</li>
+				</ul>
+			</div>
+			<br>
+			<div class="circular">
+				<p>Like a <strong>BLOG</strong> where:</p>
+				<ul>
+					<li>Each entry is guaranteed a reader.</li>
+					<li>Discussion  takes place in real time.</li>
+				</ul>
+			</div>
+			<br>
+			<div class="circular">
+				<p> How to <strong>SOCIAL NETWORK</strong> where</p>
+				<ul>
+					<li>No followers, news feeds or likes.</li>
+					<li>At any time of the day there is someone to talk to.</li>
+				</ul>
+			</div>
+		</div>
+
+		<!-- Sign in form -->
+		<div id="login-form">
+			<form action="php/action_page.php">
+				<div class="circular-login">
+					<label for="uname"><b>Email Address:</b></label>
+					<input type="email" class="form-control" placeholder="Email" id="email">
+					<br>
+					<label for="uname"><b>Password:</b></label>
+					<input type="password" class="form-control" placeholder="Password" id="pwd">
+					<br>
+					<label class="form-check-label">
+						<input class="form-check-input" type="checkbox">Remember me</a>
+					</label>
+					<br>
+					<button type="sign-in" class="btn btn-primary">Sign In</button>
+				</div>
+			</form>
+			<br>
+
+			<!-- Sign up form -->
+			<form action="php/action_page.php" >
+				<div class="circular-signin">
+					<p><strong>New to WebTalky?</strong> Join us.</p>
+					<label for="uname"><b>Email Address:</b></label>
+					<input type="email" class="form-control" placeholder="Your email" id="email" >
+					<br>
+					<label for="uname"><b>Password:</b></label>
+					<input type="password" class="form-control" placeholder="Create a password" id="pwd" >
+					<br>
+					<small id="passwordHelpBlock" class="form-text text-muted">
+		  			Your password must be 8-20 characters long.
+					</small>
+					<label for="uname"><b>Confirm Password:</b></label>
+					<input type="password" class="form-control" placeholder="Confirm password" id="c_pwd">
+					<br>
+					<small id="passwordHelpBlock" class="form-text text-muted">
+		  			Your password must be 8-20 characters long.
+					</small>
+					<br>
+					<label class="form-check-label">
+						<input class="form-check-input" type="checkbox"> I accept the <a href="https://www.youtube.com">user agreement</a>
+					</label>
+					<br>
+					<button type="submit" class="btn btn-primary">Submit</button>
+		  		</div>  		
+			</form>
+		</div>
+	</div>
+</body>
+<footer>
+	<!-- <div id = "footer" style="text-align:center">
+		<br>
+		<p><small>Copyright(c) 2020 by Dilanga and Olga.</br>All content of this website are the property of Dilanga and Olga.</small></p>
+	</div> -->
+</footer>
+
+</html>
