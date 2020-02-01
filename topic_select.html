@@ -9,6 +9,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="css/styles.css">
     <link rel="stylesheet" href="css/select.css">
+    <div id="logo">
+        <img src="images/logo.png" width="380" height="100" alt="Webtalky">
+    </div>
 </head>
 
 <body>
@@ -16,16 +19,20 @@
     <script src="" async defer></script>
     <h1 class="heading">Topic selection</h1>
     <div class="description">
-		<p id="intro_para"> <h2>Choose a topic to connect to someone. </h2></p>
-		<p id="intro_para"> <h2>There are numerouse things to discuss!.</h2></p>
-	</div>
+        <p id="intro_para">
+            <h2>Choose a topic to connect to someone. </h2>
+        </p>
+        <p id="intro_para">
+            <h2>There are numerouse things to discuss!.</h2>
+        </p>
+    </div>
     <form action="php/action_page.php">
-        <div class="circular-topic-select">
-            <div id="select-topic">
-                <p>
+        <div id="select-topic">
+            <div class="circular-topic-select">
+                <p class="center">
                     <div style="line-height: 1.5em;"><strong>Select the topic you want to talk about</strong></div>
                 </p>
-                <div>
+                <div class='center'>
                     <select class="custom-select">
                         <option value="0">Select the topic:</option>
                         <option value="1">Cars</option>
@@ -37,11 +44,10 @@
                         <option value="7">Music</option>
                     </select>
                 </div>
-                <div>
-                    <br>
-                    <button type="submit" class="roundButton btn-primary">Submit</button>
-                    <br>
-                </div>
+
+            </div>
+            <div class="center" style="margin-top: 24px;">
+                <button type="submit" class="roundButton btn-primary">Submit</button>
             </div>
         </div>
         <footer id="footer">

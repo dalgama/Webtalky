@@ -165,12 +165,9 @@ input{
 }
 
 .circular-topic-select {
-  position: relative;
-  text-align: center;
+  width: 400px;
+  height: 255px;
   padding: 20px;
-  width: 550px;
-  height: 350px;
-  left: 35%;
   border: 2px solid #ff8364;
   border-radius: 25px;
   font-size: 20px;
@@ -178,7 +175,15 @@ input{
   line-height: 15px;
   font-family: Lucida Grande,Lucida Sans Unicode,Lucida Sans,Geneva,Verdana,sans-serif; 
   background: white;
-  margin: 0;
+  margin: 0 auto;
+  margin-top: 25px;
+  text-align: center;
+}
+
+.center{
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 #login-form, #promo{
@@ -192,12 +197,17 @@ input{
 }
 
 #select-topic{
-  position: relative;
+  margin: 0 auto;
   padding: 10px;
   background: #ffb677;
   border: 2px solid #ff8364;
   border-radius: 25px;
   top: 10%;
+  width: 550px;
+  height: 380px;
+  -webkit-box-shadow: -2px 3px 40px 11px rgba(95,108,175,1);
+  -moz-box-shadow: -2px 3px 40px 11px rgba(95,108,175,1);
+  box-shadow: -2px 3px 40px 11px rgba(95,108,175,1);
 }
 
 #promo, #login-form {
