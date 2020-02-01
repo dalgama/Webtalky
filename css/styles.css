@@ -54,6 +54,16 @@ hr {
   border-width: 1px;
 } 
 
+textarea {
+  resize: none;
+}
+
+#inputField {
+  width: 580px;
+  font-size: 18px;
+  height: 5rem;
+}
+
 #intro_para{
   color: white;
 }
