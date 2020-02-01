@@ -4,18 +4,45 @@
 	<meta charset="UTF-8">
 	<link rel="stylesheet" type="text/css" href="css/styles.css">
 	<title>
-		Wetalky: Notes.
+		Webtalky: Notes.
 	</title>
 	<div id="logo">
 		<img src="images/logo.png" width="380" height="100" alt="Webtalky">
 	</div>
 </head>
 <body>
-	
-</body>
-<footer>
+	<hr>
+	<div id="content">
+		<div id="conversation"> 
+			<div class="welcome-box">
+				Your web pal is potato613
+			</div>
+			<div class="reply from-me"> 
+				Hello! Welcome to WebTalky!
+			</div>
+			<div class="reply from-other">
+				Bonjour! Bienvenu à WebTalky!
+			</div>
+		</div>
+		<div id="reply-box">
+			<form id="reply"  action="php/action_page.php" >
+				<textarea name="reply" id="reply-input" class="rtext focused" spellcheck="false" maxlength="5000" style="overflow-y: hidden;"></textarea>
+				<div class="button-wrap">
+					<button type="send" class="btn btn-primary">Send</button>
+				</div>
+			</form>
+			<!--<div class="button-wrap">
+				<input class="button" id="reply-submit" type="button" value="Send" tabindex="2">
+			</div>-->
+
+		</div>
+	</div>
+	<!--<footer>
 	<hr>
 	<div id = "footer" style="text-align:center">
 		<p><small>Copyright(c) 2020 by Dilanga and Olga.</br>All content of this website are the property of Dilanga and Olga.</small></p>
 	</div>
-</footer>
+	</footer>-->
+</body>
+
+</html>
