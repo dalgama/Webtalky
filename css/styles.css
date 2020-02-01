@@ -9,7 +9,6 @@ body {
 	background-color: #edf7fa;
 	width: 100%;
   font-family: Verdana, sans-serif; margin:0
-	
 }
 
 p,li,h1 {
@@ -20,7 +19,7 @@ h2{
   color: white;
 }
 
-button {
+button, .roundButton {
   background-color: #4CAF50;
   color: white;
   padding: 14px 20px;
@@ -30,12 +29,19 @@ button {
   width: 25%;
 }
 
+.roundButton{
+   border-radius: 25px;
+   font-size: 14px;
+}
+
 input{
   height:20px;
   font-size:10pt;
 }
 
-* {box-sizing: border-box}
+* {
+  box-sizing: border-box;
+}
 
 #intro_para{
   color: white;
@@ -49,11 +55,16 @@ input{
   position: absolute;
   bottom: 5px;
   top: 100%;
-  left: 50%;
+  left: 70%;
   transform: translate(-50%, -50%);
 }
 
-.intro{
+.footer-text{
+  font-size: 10px;
+  color: #333333;
+}
+
+.intro, .description{
   text-align: center;
   padding: 30px;
   height: 200px;
@@ -63,6 +74,13 @@ input{
   line-height: 15px;
   font-family: Lucida Grande,Lucida Sans Unicode,Lucida Sans,Geneva,Verdana,sans-serif; 
   background: #5f6caf; 
+}
+
+.description{
+  font-size: 16px;
+  padding-top: 48px;
+  height: 100;
+  margin-bottom: 48px;
 }
 
 .sign_up {
@@ -102,6 +120,21 @@ input{
   
 }
 
+.circular-select {
+  margin: auto;
+  padding: 20px;
+  width: 90%;
+  height: 90%;
+  text-align: center;
+  border: 2px solid #ff8364;
+  border-radius: 25px;
+  font-size: 16px;
+  color: #fff;
+  line-height: 15px;
+  font-family: Lucida Grande,Lucida Sans Unicode,Lucida Sans,Geneva,Verdana,sans-serif; 
+  background: #edf7fa;
+}
+
 .circular-login {
   text-align: center;
   padding: 20px;
@@ -131,11 +164,47 @@ input{
   background: #edf7fa;  
 }
 
+.circular-topic-select {
+  width: 400px;
+  height: 255px;
+  padding: 20px;
+  border: 2px solid #ff8364;
+  border-radius: 25px;
+  font-size: 20px;
+  color: #000;
+  line-height: 15px;
+  font-family: Lucida Grande,Lucida Sans Unicode,Lucida Sans,Geneva,Verdana,sans-serif; 
+  background: white;
+  margin: 0 auto;
+  margin-top: 25px;
+  text-align: center;
+}
+
+.center{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
 #login-form, #promo{
   padding: 10px;
   background: #ffb677;
   border: 2px solid #ff8364;
   border-radius: 25px;
+  -webkit-box-shadow: -2px 3px 40px 11px rgba(95,108,175,1);
+  -moz-box-shadow: -2px 3px 40px 11px rgba(95,108,175,1);
+  box-shadow: -2px 3px 40px 11px rgba(95,108,175,1);
+}
+
+#select-topic{
+  margin: 0 auto;
+  padding: 10px;
+  background: #ffb677;
+  border: 2px solid #ff8364;
+  border-radius: 25px;
+  top: 10%;
+  width: 550px;
+  height: 380px;
   -webkit-box-shadow: -2px 3px 40px 11px rgba(95,108,175,1);
   -moz-box-shadow: -2px 3px 40px 11px rgba(95,108,175,1);
   box-shadow: -2px 3px 40px 11px rgba(95,108,175,1);
