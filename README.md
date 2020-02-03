@@ -8,6 +8,10 @@ Team Member 2:
 Name: Olga Surzhok
 Student Number: 8317010
 
+Team Member 2:
+Name: Artem Tarasov
+Student Number: 8004991
+
 Outline of the Application we will be building:
  - Post an anonymous note about a subject or event you are interested in and would like to start a conversation about (during this process the user will fill a field with the general subject of their note eg. Olympics2020).
  - Once the note is sent, you will receive a note with the same or closely related to your notes general subject sent by another (random) user and you may respond if you are interested in the notes topic.
