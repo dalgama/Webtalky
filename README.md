@@ -26,5 +26,5 @@ Outline of the Application we will be building:
 
  - Our site will contain 3 page:
  	1. Index.html is the home page.
- 	2. Topic_select.html is the page the user will choose the topic to start a converation.
+ 	2. Topic_select.html is the page the user will choose the topic to start a conversation.
  	3. Notes.html is the page chat page for the users.
