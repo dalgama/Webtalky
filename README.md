@@ -8,7 +8,7 @@ Team Member 2:
 Name: Olga Surzhok
 Student Number: 8317010
 
-Team Member 2:
+Team Member 3:
 Name: Artem Tarasov
 Student Number: 8004991
 
