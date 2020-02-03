@@ -28,6 +28,14 @@ button, .roundButton {
   cursor: pointer;
   width: 25%;
 }
+#modal-button {
+    background-color: #edf7fa;
+    color: blue;
+    padding: 0;
+    width: 1;
+    margin: 0;
+    font-size: 14.5px;
+}
 
 .roundButton{
    border-radius: 25px;
@@ -39,9 +47,9 @@ input{
   font-size:10pt;
 }
 
-* {
+/** {
   box-sizing: border-box;
-}
+}*/
 
 hr { 
   display: block;
@@ -59,7 +67,7 @@ textarea {
 }
 
 #inputField {
-  width: 580px;
+  width: 630px;
   font-size: 18px;
   height: 5rem;
 }
@@ -85,10 +93,10 @@ textarea {
   color: #333333;
 }
 
-.intro, .description{
+.intro,.description{
   text-align: center;
   padding: 30px;
-  height: 200px;
+  height: 120px;
   border: 2px solid #ff8364;
   font-size: 18px;
   color: white;
@@ -96,11 +104,21 @@ textarea {
   font-family: Lucida Grande,Lucida Sans Unicode,Lucida Sans,Geneva,Verdana,sans-serif; 
   background: #5f6caf; 
 }
+.intro-terms{
+  text-align: center;
+  padding: 15px;
+  height: 60px;
+  border: 2px solid #ff8364;
+  font-size: 25px;
+  color: white;
+  line-height: 0px;
+  font-family: Lucida Grande,Lucida Sans Unicode,Lucida Sans,Geneva,Verdana,sans-serif; 
+  background: #5f6caf; 
+}
 
 .description{
   font-size: 16px;
   padding-top: 48px;
-  height: 100;
   margin-bottom: 48px;
 }
 
@@ -130,15 +148,14 @@ textarea {
 .circular {
   padding: 10px;
   width: 310px;
-  height: 150px;
+  height: 134.6px;
   border: 2px solid #ff8364;
   border-radius: 25px;
   font-size: 16px;
   color: #fff;
   line-height: 15px;
   font-family: Lucida Grande,Lucida Sans Unicode,Lucida Sans,Geneva,Verdana,sans-serif; 
-  background: #edf7fa;
-  
+  background: #edf7fa;  
 }
 
 .circular-select {
@@ -160,7 +177,7 @@ textarea {
   text-align: center;
   padding: 20px;
   width: 400px;
-  height: 160px;
+  height: 150px;
   border: 2px solid #ff8364;
   border-radius: 25px;
   font-size: 16px;
@@ -215,6 +232,9 @@ textarea {
   -webkit-box-shadow: -2px 3px 40px 11px rgba(95,108,175,1);
   -moz-box-shadow: -2px 3px 40px 11px rgba(95,108,175,1);
   box-shadow: -2px 3px 40px 11px rgba(95,108,175,1);
+  float: left;
+  margin-right: 15px;
+  margin-left: 5%;
 }
 
 #select-topic{
@@ -231,15 +251,9 @@ textarea {
   box-shadow: -2px 3px 40px 11px rgba(95,108,175,1);
 }
 
-#promo, #login-form {
-  float: left;
-  margin-right: 15px;
-  margin-left: 5%;
-}
-
 .center-info{
   margin: auto;
-  width: 65%;
+  width: 70%;
 }
 
 #content{
@@ -332,4 +346,45 @@ textarea {
   display: flex;
   align-items: center;
   justify-content: center;
+}
+
+/* The Modal (background) */
+.modal {
+  display: none; /* Hidden by default */
+  position: fixed; /* Stay in place */
+  z-index: 1; /* Sit on top */
+  padding-top: 100px; /* Location of the box */
+  left: 0;
+  top: 0;
+  width: 100%; /* Full width */
+  height: 100%; /* Full height */
+  overflow: auto; /* Enable scroll if needed */
+  background-color: rgb(0,0,0); /* Fallback color */
+  background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+}
+
+/* Modal Content */
+.modal-content {
+  border-radius: 25px;
+  background-color: #edf7fa;
+  margin: auto;
+  padding: 20px;
+  border: 1px solid #888;
+  border: 2px solid #ff8364;
+  width: 80%;
+}
+
+/* The Close Button */
+.close {
+  color: #aaaaaa;
+  float: right;
+  font-size: 28px;
+  font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+  color: #000;
+  text-decoration: none;
+  cursor: pointer;
 }
