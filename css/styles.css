@@ -68,8 +68,9 @@ textarea {
 
 #inputField {
   width: 630px;
-  font-size: 18px;
-  height: 5rem;
+  font-size: 25px;
+  height: 40px;
+  font-family: Lucida Grande,Lucida Sans Unicode,Lucida Sans,Geneva,Verdana,sans-serif;
 }
 
 #intro_para{
