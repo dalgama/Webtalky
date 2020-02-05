@@ -5,9 +5,9 @@
 	<link rel="stylesheet" type="text/css" href="css/styles.css">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<title>
-		Webtalky Home
+		WebTalky
 	</title>
-	
+	<link rel="icon" href="images/icon.png" type="image/icon type">
 	<div id="logo">
 		<img src="images/logo.png" width="380" height="100" alt="Webtalky">
 	</div>
@@ -16,7 +16,7 @@
 	<H1 class = "heading">Welcome to Webtalky!</H1>
 	<!-- Introduction -->
 	<div class="intro">
-		<h2> Post anonymous notes!!</h2>
+		<h2> Start anonymous chats!!</h2>
 		<p id="intro_para"> Choose a topic and connect with someone, far or close and start a conversation. </p>
 		<p id="intro_para"> Keep your privacy at ease and get connected with someone who has the same interests as you.</p>
 	</div>
@@ -26,7 +26,8 @@
 			<div class="circular">
 	  			<p>Like a <strong>CHAT</strong> where:</p>
 				<ul>
-					<li>No need to wait while the other person is typing.</li>
+					<li>No need to wait too long for a reply, the chat is instantanous.</li>
+					<br>
 					<li>Correspondence can last for months.</li>
 				</ul>
 			</div>
@@ -34,8 +35,9 @@
 			<div class="circular">
 				<p>Like a <strong>BLOG</strong> where:</p>
 				<ul>
-					<li>Each entry is guaranteed a reader.</li>
-					<li>Discussion  takes place in real time.</li>
+					<li>Each topic chat request is guaranteed a match.</li>
+					<br>
+					<li>Discussion takes place in real time.</li>
 				</ul>
 			</div>
 			<br>
@@ -43,6 +45,7 @@
 				<p> How to <strong>SOCIAL NETWORK</strong> where</p>
 				<ul>
 					<li>No followers, news feeds or likes.</li>
+					<br>
 					<li>At any time of the day there is someone to talk to.</li>
 				</ul>
 			</div>
@@ -52,6 +55,7 @@
 		<div id="login-form">
 			<form action="php/action_page.php">
 				<div class="circular-login">
+					<br>
 					<label for="uname"><b>Email Address:</b></label>
 					<input type="email" class="form-control" placeholder="Email" id="email">
 					<br>
@@ -80,6 +84,7 @@
 					<small id="passwordHelpBlock" class="form-text text-muted">
 		  			Your password must be 8-20 characters long.
 					</small>
+					<br>
 					<label for="uname"><b>Confirm Password:</b></label>
 					<input type="password" class="form-control" placeholder="Confirm password" id="c_pwd">
 					<br>
@@ -88,12 +93,67 @@
 					</small>
 					<br>
 					<label class="form-check-label">
-						<input class="form-check-input" type="checkbox"> I accept the <a href="https://www.youtube.com">user agreement</a>
+						<input class="form-check-input" type="checkbox">I accept the
+						<button type = "button" id="modal-button" class="myModal">user agreement</button>
 					</label>
 					<br>
-					<button type="submit" class="roundButton btn-primary">Submit</button>
-		  		</div>  		
+					<button type="submit" class="roundButton btn-primary">Sign Up</button>
+		  		</div>	
 			</form>
+
+			<!-- The Modal -->
+			<div id="myModal" class="modal">
+			    <!-- Modal content -->
+			    <div class="modal-content">
+			    	<span class="close">&times;</span>
+			      	<p>
+						<strong>Terms of Service:</strong>
+				  	</p>
+				  	<p>
+						This Terms of Service Agreement (hereinafter "Agreement") sets forth the terms and conditions by which we, WWW Adventures, provide the WebTalky Application Services to site visitors, users. By visiting our site, using any of the tools and services provided via our site, you thereby agree to be bound by each of the terms and conditions of this Agreement.
+					</p>
+				  	<p>
+						We may automatically amend this Agreement at any time by informing you of the amended terms. For user to WebTalky  it is their responsibility to read this Terms of Service each time they access any portion of our site. Any usage of this site by you, including merely viewing our home page or any page published on our site, as an unregistered WebTalky's user, means that you agree to be bound by each and every one of the terms and conditions of this Terms of Service Agreement.
+					</p>
+					<p>
+						1. <strong>General</strong>
+						<br>
+						<ul>
+						  <li>WebTalky is always striving to improve the Service and bring you additional functionality that you will find engaging and useful. This means we may add new product features or enhancements from time to time as well as remove some features, and if these actions do not materially affect your rights or obligations, we may not provide you with notice before taking them.</li>
+						</ul>
+						
+					</p>
+					<p>
+						2. <strong>Privacy vs Violations</strong>
+						<br>
+						<ul>
+						  <li>No third parties can access the content you share in the app.
+						Despite the fact that this space is anonymous and secure, users are obliged to follow the rules. We will tolerate terrorism, pedophilia, violence, underaged users, pornography, bullying or other restrictive behavior.</li>
+						</ul>
+						
+					</p>
+					<p>
+						3. <strong>Community Rules.</strong>
+						<br>
+						By using the Service, you agree that you will not:
+					</p>
+					<p>
+						<ul>
+						  <li>Use the Service for any purpose that is illegal or prohibited by this Agreement.</li>
+						  <li>Use the Service for any harmful or nefarious purpose.</li>
+						  <li>Use the Service in order to damage WebTalky.</li>
+						  <li>Spam, solicit money from or defraud any users.</li>
+						  <li>Impersonate any person or entity or post any images of another person without his or her permission.</li>
+						  <li>Bully, “stalk,” intimidate, assault, harass, mistreat or defame any person.</li>
+						  <li>Post any Content that violates or infringes anyone’s rights, including rights of publicity, privacy, copyright, trademark or other intellectual property or contract right.</li>
+						  <li>Post any Content that is hate speech, threatening, sexually explicit or pornographic; incites violence; or contains nudity or graphic or gratuitous violence.</li>
+						  <li>Post any Content that promotes racism, bigotry, hatred or physical harm of any kind against any group or individual.</li>
+						</ul>	
+					
+					</p>
+			    </div>
+			<script src="js/script.js"></script>
+			</div>
 		</div>
 	</div>
 </body>
