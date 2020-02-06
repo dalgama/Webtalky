@@ -24,7 +24,20 @@ Outline of the Application we will be building:
 
  Deliverable 2:
 
+ - Technologies used for this deliverable:
+	1. HTML
+	2. CSS
  - Our site will contain 3 page:
  	1. Index.html is the home page.
  	2. Topic_select.html is the page the user will choose the topic to start a conversation.
- 	3. Notes.html is the page chat page for the users.
+ 	3. Messeges.html is the page chat page for the users.
+ - We chose the following colour palette for our site:
+	#edf7fa
+	#5f6caf
+	#ffb677
+	#ff8364
+ - Our font-families of choice are:
+	Verdana, sans-serif (body)
+	Lucida Grande,Lucida Sans Unicode,Lucida Sans,Geneva,Verdana,sans-serif (paragraph, list, heading)
+
+	
