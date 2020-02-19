@@ -6,21 +6,25 @@ exports.handler = async (event, context) => {
 
     let responseBody = '';
     let statusCode = 0;
-    const { userId } = event
+    let path = event.path.split("/");
+    let id = path[path.length - 1];
 
     const params = {
         TableName: 'User',
         Key: {
-            userId: userId
+            userId: id
         }
-
-    }
+    };
     try {
         const data = await documentClient.get(params).promise();
         responseBody = JSON.stringify(data);
-        statusCode = 201;
+        statusCode = 200;
     } catch (err) {
-        responseBody = `Unable to get user: ${err} ${userId}`;
+        let txt = ''
+        for (var x in event){
+            txt += x + ": " + event[x] + " ";
+        }
+        responseBody = `Unable to get user: ${err} ${txt}`;
         statusCode = 403;
     }
     const response = {

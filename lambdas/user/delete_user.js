@@ -6,25 +6,27 @@ exports.handler = async (event, context) => {
 
     let responseBody = '';
     let statusCode = 0;
-
+    const { userId } = event
     const params = {
         TableName: 'User',
-        Key: {
-            userId: '123'
+        Item: {
+            userId: userId
         }
+
     }
     try {
-        const data = await documentClient.delete(params).promise();
+        const data = await documentClient.get(params).promise();
         responseBody = JSON.stringify(data);
-        statusCode = 204;
+        statusCode = 201;
     } catch (err) {
-        responseBody = `Unable to delete user: ${err}`;
+        responseBody = `Unable to put user: ${err}`;
         statusCode = 403;
     }
     const response = {
         statusCode: statusCode,
         headers: {
-            'Content-type': 'application/json'
+            'Content-type': 'application/json',
+            'access-control-allow-origin': '*'
         },
         body: responseBody
     };
