@@ -1,6 +1,6 @@
 'use strict'
 const AWS = require('aws-sdk');
-AWS.config.update({ region: 'us-east-1' })
+AWS.config.update({ region: 'us-east-1' });
 exports.handler = async (event, context) => {
     const documentClient = new AWS.DynamoDB.DocumentClient({ region: 'us-east-1' })
     let responseBody = '';
@@ -22,7 +22,7 @@ exports.handler = async (event, context) => {
         responseBody = JSON.stringify(data);
         statusCode = 204;
     } catch (err) {
-        responseBody = `Unable to Update user: ${err}`;
+        responseBody = `Unable to update user: ${err}`;
         statusCode = 403;
     }
     const response = {

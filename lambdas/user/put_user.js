@@ -1,6 +1,6 @@
 'use strict'
 const AWS = require('aws-sdk');
-AWS.config.update({ region: 'us-east-1' })
+AWS.config.update({ region: 'us-east-1' });
 exports.handler = async (event, context) => {
     const documentClient = new AWS.DynamoDB.DocumentClient({ region: 'us-east-1' })
     let responseBody = '';
@@ -13,13 +13,13 @@ exports.handler = async (event, context) => {
             userName: name,
             conversation: conversationId
         }
-    }
+    };
     try {
         const data = await documentClient.put(params).promise();
         responseBody = JSON.stringify(data);
         statusCode = 201;
     } catch (err) {
-        
+
         responseBody = `Unable to put user: ${err}`;
         statusCode = 403;
     }
