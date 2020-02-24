@@ -39,6 +39,8 @@ Outline of the Application we will be building:
  - Our font-families of choice are:
 	Verdana, sans-serif (body)
 	Lucida Grande,Lucida Sans Unicode,Lucida Sans,Geneva,Verdana,sans-serif (paragraph, list, heading)
+ 
+ Deliverable 3:
 
 To implemt example call to our API in order to retrive an example data do call to https://u0bqxo1avb.execute-api.us-east-1.amazonaws.com/prod/
 
@@ -53,5 +55,5 @@ Current API route status is following:
 			
 example call https://u0bqxo1avb.execute-api.us-east-1.amazonaws.com/prod/user/123
 
-In progredss: Msg, conversaton, topic table API implimentation
+In progress: Msg, conversaton, topic table API implimentation
 	
