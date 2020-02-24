@@ -23,3 +23,9 @@ window.onclick = function(event) {
     modal.style.display = "none";
   }
 }
+
+$.getJSON("https://u0bqxo1avb.execute-api.us-east-1.amazonaws.com/prod/user/123",
+	function(data){
+		console.log(data);
+	}
+);
