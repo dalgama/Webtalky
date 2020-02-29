@@ -1,0 +1,25 @@
+{
+  "name": "csi3140_project_don_olga",
+  "version": "1.0.0",
+  "description": "Team Member 1: Name: Don Mariyan Dilanga Algama Student Number: 8253677",
+  "main": "index.js",
+  "dependencies": {
+    "nodemon": "^2.0.2",
+    "socket.io": "^2.3.0"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "devStart": "nodemon server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/professor-forward/csi3140_project_don_olga.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/professor-forward/csi3140_project_don_olga/issues"
+  },
+  "homepage": "https://github.com/professor-forward/csi3140_project_don_olga#readme"
+}
