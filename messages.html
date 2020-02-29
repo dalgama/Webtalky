@@ -51,6 +51,7 @@
 
 				sendButton.onclick = function(){
 					latestReply.innerHTML= inputField.value;
+					inputField.value = "";
 					latestReply.classList.toggle("invisible", false);
 
 					setTimeout(function() {
@@ -59,9 +60,6 @@
 					newReply.innerHTML = "Nice to meet you!"
 					document.getElementById("conversation").appendChild(newReply);
 					}, 5000);
-
-					latestReply.id = null;
-
 				}
 
 
