@@ -343,6 +343,14 @@ textarea {
   float:right;
 }
 
+.hidden{
+  display:none;
+}
+
+.invisible{
+  visibility: hidden;
+}
+
 .button-wrap{
   display: flex;
   align-items: center;
