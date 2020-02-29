@@ -24,12 +24,16 @@
 			<div class="reply from-other">
 				Bonjour! Bienvenu à WebTalky!
 			</div>
+			<div id="latest-reply" class="reply from-me invisible"> 
+				You can see this message
+			</div>
 		</div>
 		<div id="reply-box">
-			<form id="reply"  action="php/action_page.php" >
+			<!--<form id="reply"  action="php/action_page.php" >-->
+			<form id="reply" >
 				<textarea name="reply" id="inputField" class="rtext focused" spellcheck="false" maxlength="5000" style="overflow-y: hidden;"></textarea>
 				<div class="button-wrap">
-					<button type="send" class="roundButton btn-primary">Send</button>
+					<button id="send-button" type="button" class="roundButton btn-primary">Send</button>
 				</div>
 			</form>
 			<!--<div class="button-wrap">
@@ -37,6 +41,32 @@
 			</div>-->
 
 		</div>
+		<script type="text/javascript">
+			window.onload = function() {
+				let sendButton = document.getElementById("send-button");
+				let latestReply = document.getElementById("latest-reply");
+				let inputField = document.getElementById("inputField");
+
+
+
+				sendButton.onclick = function(){
+					latestReply.innerHTML= inputField.value;
+					latestReply.classList.toggle("invisible", false);
+
+					setTimeout(function() {
+					let newReply = document.createElement("div");
+					newReply.classList.add("reply", "from-other");
+					newReply.innerHTML = "Nice to meet you!"
+					document.getElementById("conversation").appendChild(newReply);
+					}, 5000);
+
+					latestReply.id = null;
+
+				}
+
+
+			}
+		</script>
 	</div>
 	<!--<footer>
 	<hr>
