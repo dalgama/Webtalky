@@ -6,6 +6,7 @@
   "dependencies": {
     "chai": "^4.2.0",
     "ejs": "^3.0.1",
+    "express": "^4.17.1",
     "http": "0.0.0",
     "https": "^1.0.0",
     "mocha": "^7.1.0",
@@ -16,7 +17,8 @@
   "devDependencies": {},
   "scripts": {
     "test": "mocha",
-    "devStart": "nodemon server.js"
+    "devStart": "nodemon server.js",
+    "client": "nodemon client.js"
   },
   "repository": {
     "type": "git",
