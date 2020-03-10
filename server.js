@@ -1,8 +1,8 @@
 const express = require('express');
+// const http = require('http');
 const app = express();
-const server = require('http').Server(app);
-const http = require('http');
-const io = require('socket.io')(server);
+const http = require('http').Server(app);
+const io = require('socket.io')(http);
 users = [];
 connections = [];
 
@@ -29,7 +29,7 @@ io.sockets.on('connection', socket => {
     connections.push(socket);
     console.log('Connected: %s connected,  id %s', connections.length, socket.id);
 
-    socket.on('user_login', username => {
+    socket.on('user_login', (username) => {
         socket.username = username;
         io.emit('is_online', '🔵 <i>' + socket.username + ' join the chat..</i>');
     });
@@ -40,7 +40,7 @@ io.sockets.on('connection', socket => {
         io.emit('is_offline', '🔴 <i>' + socket.username + ' left the chat..</i>');
     });
 
-    socket.on('chat_message', msg => {
+    socket.on('chat_message', (msg) => {
         msg.username = socket.username;
         io.emit('chat_message', msg)
     });
@@ -74,10 +74,10 @@ function get() {
 
 app.get('/topics', (req, res) => {
     console.log('topic request recived');
-    
+
 });
 
 
-const server = http.listen(3031, () => {
+const start_server = http.listen(3031, () => {
     console.log('listening on *:3031');
 });
