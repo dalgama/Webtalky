@@ -4,7 +4,6 @@ window.onload = function () {
 	let inputField = document.getElementById("inputField");
 
 	function addMessages(message) {
-		// message = JSON.parse(message)
 		let newReply = document.createElement("div");
 		newReply.classList.add("reply", "from-other");
 		let msg = `<h4> ${message.username} </h4><p>  ${message.msg} </p>`
