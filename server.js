@@ -1,13 +1,16 @@
 const express = require('express');
-// const http = require('http');
+const http = require('http');
 const app = express();
-const http = require('http').Server(app);
-const io = require('socket.io')(http);
+const server = http.Server(app);
+const io = require('socket.io')(server);
+const routes = require('./routes/api.js');
+
 users = [];
 connections = [];
 
 console.log('Server is runnung')
 
+app.use(routes);
 app.use('/assets', express.static('assets'));
 app.use('/images', express.static('images'));
 app.use('/js', express.static('js'));
@@ -46,38 +49,6 @@ io.sockets.on('connection', socket => {
     });
 });
 
-function get() {
-    exports.handler = async (event, context) => {
-
-        return new Promise((resolve, reject) => {
-            const options = {
-                host: 'u0bqxo1avb.execute-api.us-east-1.amazonaws.com',
-                path: '/prod/user/123',
-                port: 8000,
-                method: 'GET'
-            };
-
-            const request = http.request(options, (res) => {
-                resolve('Success');
-            });
-
-            request.on('error', (e) => {
-                reject(e.message);
-            });
-
-            request.write('');
-            request.end();
-        });
-    };
-};
-
-
-app.get('/topics', (req, res) => {
-    console.log('topic request recived');
-
-});
-
-
-const start_server = http.listen(3031, () => {
+const start_server = server.listen(3031, () => {
     console.log('listening on *:3031');
 });
