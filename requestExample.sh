@@ -1,0 +1,11 @@
+curl 'https://u0bqxo1avb.execute-api.us-east-1.amazonaws.com/prod/user/123'
+-H 'authority: u0bqxo1avb.execute-api.us-east-1.amazonaws.com'
+-H 'cache-control: max-age=0' 
+-H 'upgrade-insecure-requests: 1' 
+-H 'user-agent: Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) snap Chromium/80.0.3987.132 Chrome/80.0.3987.132 Safari/537.36' 
+-H 'sec-fetch-dest: document' 
+-H 'accept: text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.9' 
+-H 'sec-fetch-site: none' 
+-H 'sec-fetch-mode: navigate' 
+-H 'sec-fetch-user: ?1' 
+-H 'accept-language: en-US,en;q=0.9' --compressed
