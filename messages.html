@@ -9,7 +9,7 @@
 	<link rel="icon" href="images/icon.png" type="image/icon type">
 	<div id="logo">
 		<img src="images/logo.png" width="380" height="100" alt="Webtalky">
-	</div>
+	</div>	
 </head>
 <body>
 	<hr>
@@ -47,8 +47,6 @@
 				let latestReply = document.getElementById("latest-reply");
 				let inputField = document.getElementById("inputField");
 
-
-
 				sendButton.onclick = function(){
 					latestReply.innerHTML= inputField.value;
 					inputField.value = "";
@@ -61,17 +59,8 @@
 					document.getElementById("conversation").appendChild(newReply);
 					}, 5000);
 				}
-
-
 			}
 		</script>
 	</div>
-	<!--<footer>
-	<hr>
-	<div id = "footer" style="text-align:center">
-		<p><small>Copyright(c) 2020 by Dilanga and Olga.</br>All content of this website are the property of Dilanga and Olga.</small></p>
-	</div>
-	</footer>-->
 </body>
-
 </html>
