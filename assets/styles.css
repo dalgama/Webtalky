@@ -8,25 +8,30 @@
 body {
 	background-color: #edf7fa;
 	width: 100%;
-  font-family: Verdana, sans-serif; margin:0
+  font-family: Montserrat, sans-serif;
+  padding: 0;
+  margin: 0;
 }
 
 p,li,h1 {
 	color: #333333;
-	font-family: Lucida Grande,Lucida Sans Unicode,Lucida Sans,Geneva,Verdana,sans-serif; 
+	font-family: Montserrat, sans-serif; 
 }
 h2{
   color: white;
 }
 
-button, .roundButton {
-  background-color: #4CAF50;
+.roundButton {
+  /*background-color: #4CAF50;*/
+  background-color: #ff6300;
   color: white;
   padding: 14px 20px;
   margin: 8px 0;
   border: none;
   cursor: pointer;
   width: 25%;
+  /*border-radius: 25px;*/
+  font-size: 14px;
 }
 #modal-button {
     background-color: #edf7fa;
@@ -37,19 +42,10 @@ button, .roundButton {
     font-size: 13.7px;
 }
 
-.roundButton{
-   border-radius: 25px;
-   font-size: 14px;
-}
-
 input{
   height:20px;
   font-size:10pt;
 }
-
-/** {
-  box-sizing: border-box;
-}*/
 
 hr { 
   display: block;
@@ -70,11 +66,12 @@ textarea {
   width: 630px;
   font-size: 25px;
   height: 40px;
-  font-family: Lucida Grande,Lucida Sans Unicode,Lucida Sans,Geneva,Verdana,sans-serif;
+  font-family: Montserrat, sans-serif;
 }
 
 #intro_para{
   color: white;
+  font-size: 20px;
 }
 
 .heading{
@@ -102,7 +99,7 @@ textarea {
   font-size: 18px;
   color: white;
   line-height: 15px;
-  font-family: Lucida Grande,Lucida Sans Unicode,Lucida Sans,Geneva,Verdana,sans-serif; 
+  font-family: Montserrat; 
   background: #5f6caf; 
 }
 .intro-terms{
@@ -113,7 +110,7 @@ textarea {
   font-size: 25px;
   color: white;
   line-height: 0px;
-  font-family: Lucida Grande,Lucida Sans Unicode,Lucida Sans,Geneva,Verdana,sans-serif; 
+  font-family: Montserrat, sans-serif; 
   background: #5f6caf; 
 }
 
@@ -148,14 +145,14 @@ textarea {
 
 .circular {
   padding: 10px;
-  width: 310px;
+  width: 340px;
   height: 134.6px;
   border: 2px solid #ff8364;
   border-radius: 25px;
-  font-size: 16px;
+  font-size: 17px;
   color: #fff;
   line-height: 15px;
-  font-family: Lucida Grande,Lucida Sans Unicode,Lucida Sans,Geneva,Verdana,sans-serif; 
+  font-family: Montserrat, sans-serif; 
   background: #edf7fa;  
 }
 
@@ -170,7 +167,7 @@ textarea {
   font-size: 16px;
   color: #fff;
   line-height: 15px;
-  font-family: Lucida Grande,Lucida Sans Unicode,Lucida Sans,Geneva,Verdana,sans-serif; 
+  font-family: Montserrat, sans-serif; 
   background: #edf7fa;
 }
 
@@ -184,8 +181,7 @@ textarea {
   font-size: 16px;
   color: #000;
   line-height: 15px;
-  font-family: Lucida Grande,Lucida Sans Unicode,Lucida Sans,Geneva,Verdana,sans-serif; 
-  /*text-align: center;*/
+  font-family: Montserrat, sans-serif; 
   background: #edf7fa;  
 }
 
@@ -199,7 +195,7 @@ textarea {
   font-size: 16px;
   color: #000;
   line-height: 15px;
-  font-family: Lucida Grande,Lucida Sans Unicode,Lucida Sans,Geneva,Verdana,sans-serif; 
+  font-family: Montserrat, sans-serif; 
   background: #edf7fa;  
 }
 
@@ -212,7 +208,7 @@ textarea {
   font-size: 20px;
   color: #000;
   line-height: 15px;
-  font-family: Lucida Grande,Lucida Sans Unicode,Lucida Sans,Geneva,Verdana,sans-serif; 
+  font-family: Montserrat, sans-serif; 
   background: white;
   margin: 0 auto;
   margin-top: 25px;
@@ -308,7 +304,7 @@ textarea {
     background-color:#5f6caf;
     min-height:50px;
     margin-bottom:8px;
-    font-family: Lucida Grande,Lucida Sans Unicode,Lucida Sans,Geneva,Verdana,sans-serif; 
+    font-family: Montserrat, sans-serif; 
     text-align: center;
     text-shadow: 2px 2px #2f4858;
 }
@@ -398,4 +394,105 @@ textarea {
   color: #000;
   text-decoration: none;
   cursor: pointer;
+}
+
+#notfound {
+  position: relative;
+  height: 100vh;
+}
+
+#notfound .notfound {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  -webkit-transform: translate(-50%, -50%);
+      -ms-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+}
+
+.notfound {
+  max-width: 520px;
+  width: 100%;
+  line-height: 1.4;
+  text-align: center;
+}
+
+.notfound .notfound-404 {
+  position: relative;
+  height: 200px;
+  margin: 0px auto 20px;
+  z-index: -1;
+}
+
+.notfound .notfound-404 h1 {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 236px;
+  font-weight: 200;
+  margin: 0px;
+  color: #211b19;
+  text-transform: uppercase;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  -webkit-transform: translate(-50%, -50%);
+      -ms-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+}
+
+.notfound .notfound-404 h2 {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 28px;
+  font-weight: 400;
+  text-transform: uppercase;
+  color: #211b19;
+  background: #fff;
+  padding: 10px 5px;
+  margin: auto;
+  display: inline-block;
+  position: absolute;
+  bottom: 0px;
+  left: 0;
+  right: 0;
+}
+
+.notfound a {
+  font-family: 'Montserrat', sans-serif;
+  display: inline-block;
+  font-weight: 700;
+  text-decoration: none;
+  color: #fff;
+  text-transform: uppercase;
+  padding: 13px 23px;
+  background: #ff6300;
+  font-size: 18px;
+  -webkit-transition: 0.2s all;
+  transition: 0.2s all;
+}
+
+.notfound a:hover {
+  color: #ff6300;
+  background: #211b19;
+}
+
+@media only screen and (max-width: 767px) {
+  .notfound .notfound-404 h1 {
+    font-size: 148px;
+  }
+}
+
+@media only screen and (max-width: 480px) {
+  .notfound .notfound-404 {
+    height: 148px;
+    margin: 0px auto 10px;
+  }
+  .notfound .notfound-404 h1 {
+    font-size: 86px;
+  }
+  .notfound .notfound-404 h2 {
+    font-size: 16px;
+  }
+  .notfound a {
+    padding: 7px 15px;
+    font-size: 14px;
+  }
 }
