@@ -6,7 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <title>Topics - WebTalky</title>
     <link rel="icon" href="images/icon.png" type="image/icon type">
-	<script src="http://code.jquery.com/jquery-3.3.1.min.js" crossorigin="anonymous"></script>
+    <script src="http://code.jquery.com/jquery-3.3.1.min.js" crossorigin="anonymous"></script>
     <meta name="description" content="Choose your topic to discuss">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link href="https://fonts.googleapis.com/css?family=Montserrat:200,400,700" rel="stylesheet">
@@ -19,7 +19,6 @@
 </head>
 
 <body>
-    <script src="" async defer></script>
     <h1 class="heading">Topic Selection</h1>
     <div class="description">
         <p id="intro_para">
@@ -29,30 +28,24 @@
             <h2>There are numerouse topics to chat about!!</h2>
         </p>
     </div>
-    <form action="php/action_page.php">
+    <form action="/matching" method="post" id="topicForm">
         <div id="select-topic">
             <div class="circular-topic-select">
                 <p class="center">
                     <div style="line-height: 1.5em;"><strong>Select the topic you want to talk about</strong></div>
                 </p>
                 <div class='center'>
-                    <select class="custom-select">
-                        <option value="0">Select the topic:</option>
-                        <option value="1">Cars</option>
-                        <option value="2">Sport</option>
-                        <option value="3">Movies</option>
-                        <option value="4">War</option>
-                        <option value="5">Peace</option>
-                        <option value="6">Cats</option>
-                        <option value="7">Music</option>
+                    <select name = "topicValues" class="custom-select" id="topicValues" placeholder="Pick a state...">
+
                     </select>
                 </div>
-
-            </div>
-            <div class="center" style="margin-top: 4px;">
-                <button type="submit" class="roundButton btn-primary">Submit</button>
+                <input name = 'email' type="email" id='email'>
+                <div class="center" style="margin-top: 4px;">
+                    <button type="submit" class="roundButton btn-primary">Submit</button>
+                </div>
             </div>
         </div>
     </form>
 </body>
+
 </html>

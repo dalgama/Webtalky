@@ -4,11 +4,22 @@ window.onload = function () {
         type: 'GET',
         cache: false,
         success: function (data) {
-            alert('Success!')
-            console.log(data);
+            console.log('Retrived topic data');
+            items = data.Items;
+            items = items.sort(function (a, b) {
+                return a.topicId - b.topicId;
+            });
+            console.log(items);
+            items.forEach(item => {
+                let newItem = document.createElement('option');
+                newItem.setAttribute('value', item.topicId);
+                newItem.innerHTML = item.name;
+                document.getElementById("topicValues").appendChild(newItem);
+            });
+
         },
         error: function (jqXHR, textStatus, err) {
-            alert('text status ' + textStatus + ', err ' + err)
+            console.log('text status ' + textStatus + ', err ' + err)
         }
     });
 }
