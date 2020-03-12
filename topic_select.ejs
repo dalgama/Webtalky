@@ -19,6 +19,8 @@
 </head>
 
 <body>
+    <h1><%= userEmail %></h1>
+    <script>var userEmail = <%- JSON.stringify(userEmail) %>;</script>
     <h1 class="heading">Topic Selection</h1>
     <div class="description">
         <p id="intro_para">
@@ -39,7 +41,6 @@
 
                     </select>
                 </div>
-                <input name = 'email' type="email" id='email'>
                 <div class="center" style="margin-top: 4px;">
                     <button type="submit" class="roundButton btn-primary">Submit</button>
                 </div>

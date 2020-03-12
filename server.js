@@ -1,6 +1,9 @@
 const express = require('express');
 const http = require('http');
 const app = express();
+const bodyParser = require('body-parser');
+app.use(bodyParser.json());
+app.use(bodyParser.urlencoded({ extended: true }));
 const server = http.Server(app);
 const io = require('socket.io')(server);
 const routes = require('./routes/api.js');
@@ -11,20 +14,26 @@ connections = [];
 console.log('Server is runnung')
 
 app.use(routes);
+
+app.engine('html', require('ejs').renderFile);
+app.set('view engine', 'html');
+app.set('views', __dirname);
+
 app.use('/assets', express.static('assets'));
 app.use('/images', express.static('images'));
 app.use('/js', express.static('js'));
 
 app.get('/', (req, res) => {
-    res.sendFile(__dirname + '/index.html');
+    res.render(__dirname + '/index.ejs');
 });
 
 app.get('/chat', (req, res) => {
     res.sendFile(__dirname + '/messages.html');
 });
 
-app.get('/topicSelect', (req, res) => {
-    res.sendFile(__dirname + '/topic_select.html');
+app.post('/topicSelect', (req, res) => {
+    email = req.body.email
+    res.render(__dirname + '/topic_select.ejs', {userEmail: email});
 });
 
 io.sockets.on('connection', socket => {

@@ -6,8 +6,6 @@
 	<link rel="stylesheet" type="text/css" href="assets/styles.css">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<link href="https://fonts.googleapis.com/css?family=Montserrat:200,400,700" rel="stylesheet">
-	<!-- <script defer src='http://localhost:3000/socket.io/socket.io.js'></script> -->
-	<!-- <script defer src='script.js'></script> -->
 	<title>
 		WebTalky
 	</title>
@@ -57,11 +55,11 @@
 
 		<!-- Sign in form -->
 		<div id="login-form">
-			<form action="/topicSelect">
+			<form action="/topicSelect" method="POST">
 				<div class="circular-login">
 					<br>
 					<label for="uname"><b>Email Address:</b></label>
-					<input type="email" class="form-control" placeholder="Email" id="email">
+					<input type="email" name="email" class="form-control" placeholder="Email" id="email">
 					<br>
 					<label for="uname"><b>Password:</b></label>
 					<input type="password" class="form-control" placeholder="Password" id="pwd">

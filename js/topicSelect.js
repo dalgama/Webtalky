@@ -1,4 +1,16 @@
 window.onload = function () {
+    console.log(userEmail);
+    $.ajax({
+        url: `/user?${userEmail}`,
+        type: 'GET',
+        cache: false,
+        success: function (data) {
+            console.log('Retrived user data');
+        },
+        error: function (jqXHR, textStatus, err) {
+            console.log('text status ' + textStatus + ', err ' + err)
+        }
+    });
     $.ajax({
         url: '/topics',
         type: 'GET',
