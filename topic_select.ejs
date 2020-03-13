@@ -19,6 +19,8 @@
 </head>
 
 <body>
+    <h1><%= userEmail %></h1>
+    <script>var userEmail = <%- JSON.stringify(userEmail) %>;</script>
     <h1 class="heading">Topic Selection</h1>
     <div class="description">
         <p id="intro_para">
@@ -28,7 +30,7 @@
             <h2>There are numerouse topics to chat about!!</h2>
         </p>
     </div>
-    <form action="/matching" method="post" id="topicForm">
+    <form action="/chat" method="post" id="topicForm">
         <div id="select-topic">
             <div class="circular-topic-select">
                 <p class="center">
@@ -39,7 +41,6 @@
 
                     </select>
                 </div>
-                <input name = 'email' type="email" id='email'>
                 <div class="center" style="margin-top: 4px;">
                     <button type="submit" class="roundButton btn-primary">Submit</button>
                 </div>

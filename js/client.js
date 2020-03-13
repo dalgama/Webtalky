@@ -2,6 +2,7 @@ window.onload = function () {
 	let socket = io.connect('http://localhost:3031');
 	let latestReply = document.getElementById("latest-reply");
 	let inputField = document.getElementById("inputField");
+	console.log(nickName);
 
 	function addMessages(message) {
 		let newReply = document.createElement("div");
@@ -24,9 +25,10 @@ window.onload = function () {
 
 	socket.on('is_online', username => {
 		let online_status = $('<div>');
-		online_status.html(username);
+		online_status.html('🔵 <i>' + username + ' join the chat.</i>');
 		online_status.addClass('reply');
 		$('#conversation').append(online_status);
+		$('#webpal').html(username);
 	});
 
 	socket.on('is_offline', username => {
@@ -34,9 +36,8 @@ window.onload = function () {
 		offline_status.html(username);
 		offline_status.addClass('reply');
 		$('#conversation').append(offline_status);
+		$('#webpal').html = 'Penging...';
 	});
 
-	var num = Math.floor(Math.random() * 100);
-	var username = `artem${num}`;
-	socket.emit('user_login', username);
+	socket.emit('user_login', nickName);
 }
