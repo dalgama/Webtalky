@@ -48,27 +48,4 @@ router.get('/user/:email', (req, response, next) => {
     });
 });
 
-router.post('/matching', (req, response) => {
-    console.log('Topic select request body');
-    console.log(req.body);
-    response.send({hello: JSON.stringify('req')});
-    // path = '/prod/topics';
-
-    // https.get(host + path, (resp) => {
-    //     let data = '';
-
-    //     resp.on('data', (chunk) => {
-    //         data += chunk;
-    //     });
-
-    //     resp.on('end', () => {
-    //         console.log(data);
-    //         response.send(JSON.parse(data));
-    //     });
-
-    // }).on("error", (err) => {
-    //     console.log("Error: " + err.message);
-    // });
-});
-
 module.exports = router;
