@@ -5,7 +5,7 @@ const router = express.Router();
 let host = 'https://u0bqxo1avb.execute-api.us-east-1.amazonaws.com'
 
 router.get('/topics', (req, response, next) => {
-    console.log('topic request recived');
+    console.log('topic request recieved');
     let path = '/prod/topics';
 
     https.get(host + path, (resp) => {
@@ -25,9 +25,9 @@ router.get('/topics', (req, response, next) => {
 });
 
 router.get('/user/:email', (req, response, next) => {
-    console.log('user request recived');
+    console.log('user request recieved');
     let email = req.params.email;
-    console.log(email + 'eamil in url')
+    console.log(email + 'email in url')
     let path = '/prod/user';
 
     https.get(host + path + '/' + email, (resp) => {
@@ -49,7 +49,7 @@ router.get('/user/:email', (req, response, next) => {
 
 //to add new user to db need to figure out how to populate payload and attach it to request
 router.post('/user', (req, response, next) => {
-    console.log('topic request recived');
+    console.log('topic request recieved');
     let path = '/prod/user/';
     let statusCode = 0;
     let payload = {
