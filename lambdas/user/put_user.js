@@ -6,9 +6,6 @@ exports.handler = async (event, context) => {
 
     let responseBody = '';
     let statusCode = 0;
-    console.log('HELLO ');
-    console.log(event['body']);
-    console.log(event);
     
     const { userId, nickName, pwd } = JSON.parse(event["body"]);
     
