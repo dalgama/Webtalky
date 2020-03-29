@@ -1,5 +1,7 @@
 const express = require('express');
 const http = require('http');
+const https = require('https');
+const request = require('request');
 const app = express();
 const bodyParser = require('body-parser');
 app.use(bodyParser.json());
@@ -30,13 +32,45 @@ app.get('/', (req, res) => {
 app.post('/chat', (req, res) => {
     nickName = req.body.nickName;
     console.log(`data passed to chat ${nickName}`);
-    res.render(__dirname + '/messages.ejs', {nickName:nickName, 'hell':'hello'});
+    res.render(__dirname + '/messages.ejs', { nickName: nickName, 'hell': 'hello' });
 });
 
 app.post('/topicSelect', (req, res) => {
     email = req.body.email
-    res.render(__dirname + '/topic_select.ejs', {userEmail: email});
+    res.render(__dirname + '/topic_select.ejs', { userEmail: email });
 });
+
+let addNewUser = function (id, callBack) {
+    //implemnet, call ddb to check if user exist
+    //sugestion check this pipe functionality https://www.npmjs.com/package/request
+    let myCall = true;
+    if (myCall) {
+        callBack(id);
+    }
+}
+
+let addUserDdb = function (newId) {
+    let host = 'https://u0bqxo1avb.execute-api.us-east-1.amazonaws.com'
+    let payload = {
+        "userId": "test@ddb.com",
+        "nickName": "don",
+        "pwd": "500"
+    };
+
+    request.post(host + '/prod/user', {
+        json: payload
+    }, (error, res, body) => {
+        if (error) {
+            console.error(error)
+            return
+        }
+        console.log(`statusCode: ${res.statusCode}`)
+        // if status code == 201 blablabla
+        console.log(body)
+    })
+}
+
+addNewUser('newid', addUserDdb);
 
 io.sockets.on('connection', socket => {
     socket.emit('connect', 'connection established');
