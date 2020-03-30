@@ -47,30 +47,4 @@ router.get('/user/:email', (req, response, next) => {
     });
 });
 
-//to add new user to db need to figure out how to populate payload and attach it to request
-router.post('/user', (req, response, next) => {
-    console.log('topic request recieved');
-    let path = '/prod/user/';
-    let statusCode = 0;
-    let payload = {
-        nickName: '',
-        userId: 'email',
-        psw: ''
-    };
-
-    https.post(host + path, (resp) => {
-        statusCode = response.statusCode;
-
-        resp.on('data', (chunk) => {
-        });
-
-        resp.on('end', () => {
-        });
-
-    }).on("error", (err) => {
-        console.log("Error: " + err.message);
-        statusCode = 403;
-    });
-});
-
 module.exports = router;
