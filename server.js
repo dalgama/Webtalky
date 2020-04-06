@@ -116,7 +116,6 @@ app.post('/register', async(req, res) => {
 
 //Adds new users to the db.
 let addUserDdb = function (id,nickName,hashedPassword) {
-  console.log('5. Add user request recieved');
   let host = 'https://u0bqxo1avb.execute-api.us-east-1.amazonaws.com'
   let payload = {
       "userId": id,
