@@ -64,7 +64,6 @@ app.post('/login', async(req,res) => {
         status = "No account under this email. Please register."
         res.render(__dirname +"/index.ejs", { loginStatus: status });
       }
-      //let ticked = document.getElementById("Remember").checked;
     });
   }).on("error", (err) => {
       console.log("Error: " + err.message);
