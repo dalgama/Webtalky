@@ -60,7 +60,6 @@ app.post('/login', async(req,res) => {
           res.render(__dirname +"/index.ejs", { loginStatus: status });
         }
       }else{
-        console.log ("2.2 No account under this email.");
         status = "No account under this email. Please register."
         res.render(__dirname +"/index.ejs", { loginStatus: status });
       }
