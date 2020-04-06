@@ -164,10 +164,11 @@ app.delete('/logout', (req, res) => {
   req.logOut();
   res.redirect('/login');
 });
+
 app.get('*', function(req, res){
   res.render(__dirname + '/404.html')
 });
 
 const start_server = server.listen(3031, () => {
-    console.log('listening on *:3031');  
+    console.log('listening on *:3031');
 });

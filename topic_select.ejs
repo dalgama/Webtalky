@@ -19,6 +19,9 @@
 </head>
 
 <body>
+    <h1><%= userEmail %></h1>       
+    <script>var userEmail = <%- JSON.stringify(userEmail) %>;</script>
+
     <form action="/logout?_method=DELETE" method="POST">
         <button type="submit">Log Out</button>
     </form>
