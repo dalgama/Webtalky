@@ -496,3 +496,17 @@ textarea {
     font-size: 14px;
   }
 }
+
+.login-status {
+  margin: 8px;
+  color: red;
+  font-size: 18px;
+}
+
+.created-account {
+  margin: 16px;
+  color: green;
+  font-size: 18px;
+}
+  
+ 

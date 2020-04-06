@@ -16,7 +16,6 @@
 </head>
 <body>
 	<h1 class = "heading">Welcome to Webtalky!</h1>
-	<!-- Introduction-->
 	<div class="intro">
 		<h2> Start anonymous chats!!</h2>
 		<p id="intro_para"> Choose a topic and connect with someone, far or close and start a conversation. </p>
@@ -53,38 +52,35 @@
 			</div>
 		</div>
 
-		<!-- Sign in form -->
 		<div id="login-form">
-			<form action="/login" method="POST"> <!-- was routed to /topicSelect-->
+			<form action="/login" method="POST"> 
 				<div class="circular-login">
-					<br>
-					<% if (typeof loginStatus !== 'undefined') { %>
-          				<%= loginStatus %>
-          				<br>
-          			<% } %>
+					<div>
+						<br>
+						<span class="login-status"><% if (typeof loginStatus !== 'undefined') { %>
+							<%= loginStatus %>
+							<br>
+						<% } %></span>
+						<span class="created-account"><% if (typeof statusMessage !== 'undefined') { %>
+          					<%= statusMessage %>
+          					<br>
+          				<% } %></span>
+					</div>
 					<label for="uname"><b>Email Address:</b></label>
 					<input type="email" name="email" class="form-control" placeholder="Email" id="email" name="email" autocomplete ="on" required>
 					<br>
 					<label for="uname"><b>Password:</b></label>
 					<input type="password" class="form-control" placeholder="Password" id="password" name="password" required>
 					<br>
-					<!-- <label class="form-check-label"> -->
-					<!-- <input class="form-check-input" id="Remember" type="checkbox">Remember me</a> -->
-					<!-- </label> -->
-					<br>
 					<button type="submit" class="roundButton btn-primary">Sign In</button>
 				</div>
 			</form>
 			<br>
 
-			<!-- Sign up form -->
 			<form action="/register" method="POST">
 				<div class="circular-signin">
 					<p><strong>New to WebTalky?</strong> Join us.</p>
-          			<% if (typeof statusMessage !== 'undefined') { %>
-          				<%= statusMessage %>
-          				<br>
-          			<% } %>
+
 					<label for="name"><b>Name:</b></label>
           			<input type="text" placeholder="Your name" id="name" name="name" required>
           			<br>
@@ -103,9 +99,7 @@
 		  		</div>	
 			</form>
 
-			<!-- The Modal -->
 			<div id="myModal" class="modal">
-			    <!-- Modal content -->
 			    <div class="modal-content">
 			    	<span class="close">&times;</span>
 			      	<p>

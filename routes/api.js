@@ -15,7 +15,6 @@ router.get('/topics', (req, response, next) => {
         });
 
         resp.on('end', () => {
-            console.log(data);
             response.send(JSON.parse(data));
         });
 
@@ -27,7 +26,6 @@ router.get('/topics', (req, response, next) => {
 router.get('/user/:email', (req, response, next) => {
     console.log('user request recieved');
     let email = req.params.email;
-    console.log(email + 'email in url')
     let path = '/prod/user';
 
     https.get(host + path + '/' + email, (resp) => {
@@ -38,7 +36,6 @@ router.get('/user/:email', (req, response, next) => {
         });
 
         resp.on('end', () => {
-            console.log(data);
             response.send(JSON.parse(data));
         });
 
