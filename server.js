@@ -96,7 +96,6 @@ app.post('/register', async(req, res) => {
       if(newUserData !== 'Unable to get user'){
         newUserData = JSON.parse(newUserData);
       }
-      console.log("1.I am inside https");
       if(typeof newUserData !== 'string'){
         status = "Account with this email exists."
         res.render(__dirname +"/index.ejs", { statusMessage: status });
