@@ -41,7 +41,7 @@ app.post('/login', async(req,res) => {
   let path = '/prod/user';
   let email = req.body.email;
   
-  const gettinguser = await https.get(host + path + '/' + email, (resp) => {
+  const getUser = await https.get(host + path + '/' + email, (resp) => {
     let userData = '';
     resp.on('data', (chunk) => {
         userData += chunk;
@@ -51,7 +51,6 @@ app.post('/login', async(req,res) => {
         userData = JSON.parse(userData);
         console.log(userData.Item.pwd)
       };
-      console.log("1.I am inside https");
 
       if(typeof userData !== 'string'){
         if(bcrypt.compareSync(req.body.password, userData.Item.pwd)){
@@ -61,11 +60,9 @@ app.post('/login', async(req,res) => {
           res.render(__dirname +"/index.ejs", { loginStatus: status });
         }
       }else{
-        console.log ("2.2 No account under this email.");
         status = "No account under this email. Please register."
         res.render(__dirname +"/index.ejs", { loginStatus: status });
       }
-      //let ticked = document.getElementById("Remember").checked;
     });
   }).on("error", (err) => {
       console.log("Error: " + err.message);
@@ -89,8 +86,9 @@ app.post('/register', async(req, res) => {
   let email = req.body.email;
   const hashedPassword = await bcrypt.hash(req.body.password, 10);
   
-  const gettinguser = await https.get(host + path + '/' + email, (resp) => {
+  const getUser = await https.get(host + path + '/' + email, (resp) => {
     let newUserData = '';
+    let status = '';
     resp.on('data', (chunk) => {
         newUserData += chunk;
     });
@@ -99,14 +97,11 @@ app.post('/register', async(req, res) => {
       if(newUserData !== 'Unable to get user'){
         newUserData = JSON.parse(newUserData);
       }
-      console.log("1.I am inside https");
       if(typeof newUserData !== 'string'){
-        console.log("2.1 Account with this email exists.");
         status = "Account with this email exists."
         res.render(__dirname +"/index.ejs", { statusMessage: status });
 
       }else{
-        console.log ("2.2 No account under this email.");
         addUserDdb(email, req.body.name, hashedPassword);
         status = "New account created. Sign in."
         res.render(__dirname +"/index.ejs", { statusMessage: status });
@@ -120,7 +115,6 @@ app.post('/register', async(req, res) => {
 
 //Adds new users to the db.
 let addUserDdb = function (id,nickName,hashedPassword) {
-  console.log('5. Add user request recieved');
   let host = 'https://u0bqxo1avb.execute-api.us-east-1.amazonaws.com'
   let payload = {
       "userId": id,
@@ -134,7 +128,6 @@ let addUserDdb = function (id,nickName,hashedPassword) {
       console.error(error)
       return false;
     }
-    console.log('6. '+ `statusCode: ${res.statusCode}`)
   }) 
 }
 
