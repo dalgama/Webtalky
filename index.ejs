@@ -58,19 +58,19 @@
 			<form action="/login" method="POST"> <!-- was routed to /topicSelect-->
 				<div class="circular-login">
 					<br>
-          			<% if (messages.error) { %>
-          			<%= messages.error %>
+					<% if (typeof loginStatus !== 'undefined') { %>
+          				<%= loginStatus %>
+          				<br>
           			<% } %>
-          			<br>
 					<label for="uname"><b>Email Address:</b></label>
-					<input type="email" name="email" class="form-control" placeholder="Email" id="email" name="email" required>
+					<input type="email" name="email" class="form-control" placeholder="Email" id="email" name="email" autocomplete ="on" required>
 					<br>
 					<label for="uname"><b>Password:</b></label>
 					<input type="password" class="form-control" placeholder="Password" id="password" name="password" required>
 					<br>
-					<label class="form-check-label">
-					<input class="form-check-input" type="checkbox">Remember me</a>
-					</label>
+					<!-- <label class="form-check-label"> -->
+					<!-- <input class="form-check-input" id="Remember" type="checkbox">Remember me</a> -->
+					<!-- </label> -->
 					<br>
 					<button type="submit" class="roundButton btn-primary">Sign In</button>
 				</div>
@@ -81,8 +81,12 @@
 			<form action="/register" method="POST">
 				<div class="circular-signin">
 					<p><strong>New to WebTalky?</strong> Join us.</p>
+          			<% if (typeof statusMessage !== 'undefined') { %>
+          				<%= statusMessage %>
+          				<br>
+          			<% } %>
 					<label for="name"><b>Name:</b></label>
-          			<input type="text" id="name" placeholder="Your name" name="name" required>
+          			<input type="text" placeholder="Your name" id="name" name="name" required>
           			<br>
 					<label for="uname"><b>Email Address:</b></label>
 					<input type="email" class="form-control" placeholder="Your email" id="email" name ="email" required>
@@ -91,7 +95,7 @@
 					<input type="password" class="form-control" placeholder="Create a password" id="password" name= "password" required>
 					<br>
 					<label class="form-check-label">
-						<input class="form-check-input" type="checkbox">I accept the
+						<input class="form-check-input" id ="Agree" type="checkbox">I accept the
 						<button type = "button" id="modal-button" class="myModal">user agreement</button>
 					</label>
 					<br>

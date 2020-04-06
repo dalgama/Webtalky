@@ -24,10 +24,10 @@ exports.handler = async (event, context) => {
         const data = await documentClient.put(params).promise();
         responseBody = JSON.stringify(data);
         statusCode = 201;
-        responseBody += `Succesfuly add new user ${userId}`;
+        responseBody += `Successfully added a new user ${userId}`;
 
     } catch (err) {
-        responseBody = `Unable to put user: ${err}`;
+        responseBody = `Unable to add user: ${err}`;
         responseBody += event["body"] + ' ' + nickName;
         statusCode = 403;
     }
