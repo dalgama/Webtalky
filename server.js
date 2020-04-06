@@ -103,7 +103,6 @@ app.post('/register', async(req, res) => {
         res.render(__dirname +"/index.ejs", { statusMessage: status });
 
       }else{
-        console.log ("2.2 No account under this email.");
         addUserDdb(email, req.body.name, hashedPassword);
         status = "New account created. Sign in."
         res.render(__dirname +"/index.ejs", { statusMessage: status });
