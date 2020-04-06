@@ -128,7 +128,6 @@ let addUserDdb = function (id,nickName,hashedPassword) {
       console.error(error)
       return false;
     }
-    console.log('6. '+ `statusCode: ${res.statusCode}`)
   }) 
 }
 
