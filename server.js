@@ -99,7 +99,6 @@ app.post('/register', async(req, res) => {
       }
       console.log("1.I am inside https");
       if(typeof newUserData !== 'string'){
-        console.log("2.1 Account with this email exists.");
         status = "Account with this email exists."
         res.render(__dirname +"/index.ejs", { statusMessage: status });
 
