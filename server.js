@@ -51,7 +51,6 @@ app.post('/login', async(req,res) => {
         userData = JSON.parse(userData);
         console.log(userData.Item.pwd)
       };
-      console.log("1.I am inside https");
 
       if(typeof userData !== 'string'){
         if(bcrypt.compareSync(req.body.password, userData.Item.pwd)){
