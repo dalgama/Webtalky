@@ -86,7 +86,7 @@ app.post('/register', async(req, res) => {
   let email = req.body.email;
   const hashedPassword = await bcrypt.hash(req.body.password, 10);
   
-  const gettinguser = await https.get(host + path + '/' + email, (resp) => {
+  const getUser = await https.get(host + path + '/' + email, (resp) => {
     let newUserData = '';
     resp.on('data', (chunk) => {
         newUserData += chunk;
