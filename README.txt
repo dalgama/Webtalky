@@ -15,7 +15,7 @@ Student Number: 8004991
 To run project:
 - clone
 - inside of root folder run: npm i
-- inside of root folder run: npm runDev
+- inside of root folder run: npm run devStart
 This will create local server that has conection to AWS database
 
 Usage:
