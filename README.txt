@@ -12,6 +12,18 @@ Team Member 3:
 Name: Artem Tarasov
 Student Number: 8004991 
 
+To run project:
+- clone
+- inside of root folder run: npm i
+- inside of root folder run: npm runDev
+This will create local server that has conection to AWS database
+
+Usage:
+- Create atleast two users, or use already existant users: {user: test@test.com pwd: test} and {test123@test pwd: test123}
+- log in two diferent account
+- select topics
+- start chating
+
 Deliveriable 1:
 
 Outline of the Application we will be building:
@@ -57,3 +69,9 @@ example call https://u0bqxo1avb.execute-api.us-east-1.amazonaws.com/prod/user/12
 
 In progress: Msg, conversaton, topic table API implimentation
 	
+Deliverable 4:
+
+- Chat works
+- Login system works
+- Information stored and retrived from DDB
+- Fully functional API to access data
