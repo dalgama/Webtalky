@@ -12,21 +12,18 @@ app.use(bodyParser.urlencoded({ extended: true }));
 const server = http.Server(app);
 const io = require('socket.io')(server);
 const routes = require('./routes/api.js');
-
-//Login libraries
 const bcrypt = require('bcrypt');
-
-console.log('Server is runnung');
 
 app.use(routes);
 
 app.engine('html', require('ejs').renderFile);
 app.set('view engine', 'html');
 app.set(__dirname);
-
 app.use('/assets', express.static('assets'));
 app.use('/images', express.static('images'));
 app.use('/js', express.static('js'));
+
+const host = 'https://u0bqxo1avb.execute-api.us-east-1.amazonaws.com';
 
 app.get('/', (req, res) => {
     res.render(__dirname + '/index.ejs');
@@ -37,7 +34,6 @@ app.get('/login',(req, res) => {
 });
 
 app.post('/login', async(req,res) => {
-  let host = 'https://u0bqxo1avb.execute-api.us-east-1.amazonaws.com';
   let path = '/prod/user';
   let email = req.body.email;
   
@@ -49,7 +45,6 @@ app.post('/login', async(req,res) => {
     resp.on('end', () => {
       if(userData !== 'Unable to get user'){
         userData = JSON.parse(userData);
-        console.log(userData.Item.pwd)
       };
 
       if(typeof userData !== 'string'){
@@ -72,7 +67,7 @@ app.post('/login', async(req,res) => {
 app.post('/chat', (req, res) => {
     nickName = req.body.nickName;
     console.log(`data passed to chat ${nickName}`);
-    res.render(__dirname + '/messages.ejs', { nickName: nickName, 'hell': 'hello' });
+    res.render(__dirname + '/messages.ejs', { nickName: nickName });
 });
 
 app.post('/topicSelect', (req, res) => {
@@ -81,7 +76,6 @@ app.post('/topicSelect', (req, res) => {
 });
 
 app.post('/register', async(req, res) => {
-  let host = 'https://u0bqxo1avb.execute-api.us-east-1.amazonaws.com';
   let path = '/prod/user';
   let email = req.body.email;
   const hashedPassword = await bcrypt.hash(req.body.password, 10);
@@ -99,7 +93,7 @@ app.post('/register', async(req, res) => {
       }
       if(typeof newUserData !== 'string'){
         status = "Account with this email exists."
-        res.render(__dirname +"/index.ejs", { statusMessage: status });
+        res.render(__dirname +"/index.ejs", { loginStatus: status });
 
       }else{
         addUserDdb(email, req.body.name, hashedPassword);
@@ -113,9 +107,7 @@ app.post('/register', async(req, res) => {
   });
 });
 
-//Adds new users to the db.
 let addUserDdb = function (id,nickName,hashedPassword) {
-  let host = 'https://u0bqxo1avb.execute-api.us-east-1.amazonaws.com'
   let payload = {
       "userId": id,
       "nickName": nickName,
@@ -130,6 +122,8 @@ let addUserDdb = function (id,nickName,hashedPassword) {
     }
   }) 
 }
+
+var connections = [];
 
 io.sockets.on('connection', socket => {
     socket.emit('connect', 'connection established');
@@ -159,9 +153,10 @@ app.delete('/logout', (req, res) => {
 });
 
 app.get('*', function(req, res){
-  res.render(__dirname + '/404.html')
+  res.render(__dirname + '/404.html');
 });
 
 const start_server = server.listen(3031, () => {
+    console.log('Server is runnung');
     console.log('listening on *:3031');
 });
