@@ -88,6 +88,7 @@ app.post('/register', async(req, res) => {
   
   const getUser = await https.get(host + path + '/' + email, (resp) => {
     let newUserData = '';
+    let status = '';
     resp.on('data', (chunk) => {
         newUserData += chunk;
     });
