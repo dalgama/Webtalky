@@ -29,3 +29,13 @@ $.getJSON("https://u0bqxo1avb.execute-api.us-east-1.amazonaws.com/prod/user/123"
 		console.log(data);
 	}
 );
+
+function checkForm(form)
+{
+  if(!form.terms.checked) {
+    alert("Please indicate that you accept the Terms and Conditions");
+    form.terms.focus();
+    return false;
+  }
+  return true;
+}

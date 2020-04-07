@@ -77,7 +77,7 @@
 			</form>
 			<br>
 
-			<form action="/register" method="POST">
+			<form action="/register" onsubmit="return checkForm(this);" method="POST">
 				<div class="circular-signin">
 					<p><strong>New to WebTalky?</strong> Join us.</p>
 
@@ -91,7 +91,7 @@
 					<input type="password" class="form-control" placeholder="Create a password" id="password" name= "password" required>
 					<br>
 					<label class="form-check-label">
-						<input class="form-check-input" id ="Agree" type="checkbox">I accept the
+						<input class="form-check-input" id ="Agree" type="checkbox" name="terms">I accept the
 						<button type = "button" id="modal-button" class="myModal">user agreement</button>
 					</label>
 					<br>
