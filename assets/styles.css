@@ -508,5 +508,33 @@ textarea {
   color: green;
   font-size: 18px;
 }
+
+.logout {
+  position:absolute;
+  top:30px; right:30px;
+  background-color: #ff6300;
+  color: white;
+  padding: 14px 20px;
+  margin: 8px 0;
+  border: none;
+  cursor: pointer;
+  width: 10%;
+  font-size: 14px;
+  border-radius: 15px;
+}
+
+.chat_header{
+  text-align: center;
+  padding: 30px;
+  height: 60px;
+  border: 2px solid #ff8364;
+  color: white;
+  line-height: 15px;
+  font-family: Montserrat; 
+  background: #5f6caf;
+  font-size: 16px;
+  padding-top: 15px;
+  padding-bottom: 45px;
+}
   
  

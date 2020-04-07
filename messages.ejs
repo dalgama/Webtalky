@@ -2,15 +2,10 @@
 <html lang="en">
 
 <head>
-	<form action="/logout?_method=DELETE" method="POST">
-        <button type="submit">Log Out</button>
-    </form>
 	<meta charset="UTF-8">
 	<link rel="stylesheet" type="text/css" href="assets/styles.css">
 	<script src="http://code.jquery.com/jquery-3.3.1.min.js" crossorigin="anonymous"></script>
 	<script src="/socket.io/socket.io.js"></script>
-	<h1><%= nickName %></h1>
-	<script>var nickName = <%- JSON.stringify(nickName) %>;</script>
 	<script src="js/client.js"></script>
 	<title>
 		Messages - WebTalky
@@ -22,7 +17,21 @@
 </head>
 
 <body>
-	<hr>
+	<h1><%= nickName %></h1>
+	<script>var nickName = <%- JSON.stringify(nickName) %>;</script>
+	
+	<form action="/logout?_method=DELETE" method="POST">
+        <button type="submit" class ="logout">Log Out</button>
+    </form>
+    <div class="chat_header">
+        <p id="intro_para">
+            <h2> Enjoy your chat!! </h2>
+        </p>
+        <p id="intro_para">
+            <h2> Learn something new about this topic!! </h2>
+        </p>
+    </div>
+	<br>
 	<div id="content">
 		<div id="conversation">
 			<div class="welcome-box">
