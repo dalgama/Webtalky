@@ -147,8 +147,7 @@ io.sockets.on('connection', socket => {
     });
 });
 
-app.delete('/logout', (req, res) => {
-  req.logOut();
+app.post('/logout', (req, res) => {
   res.redirect('/login');
 });
 

@@ -73,5 +73,5 @@ Deliverable 4:
 
 - Chat works
 - Login system works
-- Information stored and retrived from DDB
+- Information stored and retrieved from DDB
 - Fully functional API to access data
