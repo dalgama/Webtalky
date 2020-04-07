@@ -41,7 +41,7 @@ app.post('/login', async(req,res) => {
   let path = '/prod/user';
   let email = req.body.email;
   
-  const gettinguser = await https.get(host + path + '/' + email, (resp) => {
+  const getUser = await https.get(host + path + '/' + email, (resp) => {
     let userData = '';
     resp.on('data', (chunk) => {
         userData += chunk;
