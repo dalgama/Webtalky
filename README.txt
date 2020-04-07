@@ -75,3 +75,4 @@ Deliverable 4:
 - Login system works
 - Information stored and retrieved from DDB
 - Fully functional API to access data
+- Updated test cases

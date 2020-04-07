@@ -1,31 +1,44 @@
 const { describe, it } = require('mocha');
 const { expect } = require('chai');
-var http = require('http');
+var https = require('https');
 
-describe('Testing get user endpoint:', function () {
-    var options = {
-        host: 'www.google.com',
-        path: '/index.html'
-    };
-    var req = http.get(options, function (res) {
-        console.log('STATUS: ' + res.statusCode);
-        console.log('HEADERS: ' + JSON.stringify(res.headers));
+let host = 'https://u0bqxo1avb.execute-api.us-east-1.amazonaws.com'
 
-        // Buffer the body entirely for processing as a whole.
-        var bodyChunks = [];
-        res.on('data', function (chunk) {
-            // You can process streamed parts here...
-            bodyChunks.push(chunk);
-        }).on('end', function () {
-            var body = Buffer.concat(bodyChunks);
-            console.log('BODY: ' + body);
-            // ...and/or process the entire body here.
-        })
+let getUser = (path, email) => {
+    return new Promise((resolve, reject) => {
+        let data = '';
+        https.get(host + path + '/' + email, (resp) => {
+
+            resp.on('data', (chunk) => {
+                data += chunk;
+            });
+
+            resp.on('end', () => {
+                console.log('helllllo');
+                console.log(data)
+                data = JSON.parse(data);
+                resolve(data)
+            });
+        }).on("error", (err) => {
+            console.log("Error: " + err.message);
+            reject(err);
+        });
     });
-    req.on('error', function (e) {
-        console.log('ERROR: ' + e.message);
+}
+
+describe('Testing get user endpoint:', () => {
+
+    let email = 'test@test.com';
+    let path = '/prod/user';
+    it('Nickname should be equal', async () => {
+        let data = await getUser(path, email);
+        console.log(data);
+        expect(data.Item.nickName === 'test').to.be.true;
     });
-    it('Values should be equal', function () {
-        expect(1 === 1).to.be.true;
+    it('Email should be equal', async () => {
+        let data = await getUser(path, email);
+        console.log(data);
+        expect(data.Item.userId === 'test@test.com').to.be.true;
     });
+
 })
