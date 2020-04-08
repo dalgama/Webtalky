@@ -17,7 +17,6 @@
 </head>
 
 <body>
-	<h1><%= nickName %></h1>
 	<script>var nickName = <%- JSON.stringify(nickName) %>;</script>
 	
 	<form action="/logout?_method=DELETE" method="POST">
@@ -56,9 +55,6 @@
 					<button id="send-button" type="button" class="roundButton btn-primary">Send</button>
 				</div>
 			</form>
-			<!--<div class="button-wrap">
-				<input class="button" id="reply-submit" type="button" value="Send" tabindex="2">
-			</div>-->
 		</div>
 	</div>
 </body>
