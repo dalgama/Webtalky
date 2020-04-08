@@ -2,6 +2,7 @@ window.onload = function () {
 	let socket = io.connect('http://localhost:3031');
 	let latestReply = document.getElementById("latest-reply");
 	let inputField = document.getElementById("inputField");
+	let topic = document.getElementById("topic").value;
 	console.log(nickName);
 
 	function addMessages(message) {
@@ -46,5 +47,5 @@ window.onload = function () {
 		$('#webpal').html = 'Penging...';
 	});
 
-	socket.emit('user_login', nickName);
+	socket.emit('user_login', nickName, topic);
 }

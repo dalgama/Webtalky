@@ -29,7 +29,7 @@ window.onload = function () {
             console.log(items);
             items.forEach(item => {
                 let newItem = document.createElement('option');
-                newItem.setAttribute('value', item.topicId);
+                newItem.setAttribute('value', item.name);
                 newItem.innerHTML = item.name;
                 document.getElementById("topicValues").appendChild(newItem);
             });
