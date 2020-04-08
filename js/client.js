@@ -29,7 +29,7 @@ window.onload = function () {
 		console.log(data);
 	});
 
-	socket.on('is_online', (username, other) => {
+	socket.on('is_online', (username, other, topic) => {
 		let online_status = $('<div>');
 		online_status.html('🔵 <i>' + username + ' join the chat.</i>');
 		online_status.addClass('reply');

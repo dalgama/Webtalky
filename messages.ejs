@@ -18,9 +18,7 @@
 
 <body>
 	<h1><%= nickName %></h1>
-	<h1 id="topic"><%= topic %></h1>
 	<script>var nickName = <%- JSON.stringify(nickName) %>;</script>
-	<script>var topic = <%- JSON.stringify(topic) %>;</script>
 	
 	<form action="/logout?_method=DELETE" method="POST">
         <button type="submit" class ="logout">Log Out</button>
@@ -30,7 +28,8 @@
             <h2> Enjoy your chat!! </h2>
         </p>
         <p id="intro_para">
-            <h2> Learn something new about this topic!! </h2>
+			<h2> Learn something new about <span id="topic"><%= topic %></span>! </h2>			
+			<script>var topic = <%- JSON.stringify(topic) %>;</script>
         </p>
     </div>
 	<br>
