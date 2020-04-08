@@ -6,6 +6,11 @@ window.onload = function () {
 
 	function addMessages(message) {
 		let newReply = document.createElement("div");
+		/*		if (localeCompare(message.username, nickName) == 0){
+			newReply.classList.add("reply", "from-me");
+		} else {
+			newReply.classList.add("reply", "from-other");
+		}*/ 
 		newReply.classList.add("reply", "from-other");
 		let msg = `<h4> ${message.username} </h4><p>  ${message.msg} </p>`
 		newReply.innerHTML = msg;
@@ -28,7 +33,9 @@ window.onload = function () {
 		online_status.html('🔵 <i>' + username + ' join the chat.</i>');
 		online_status.addClass('reply');
 		$('#conversation').append(online_status);
-		$('#webpal').html(username);
+		if (username.localeCompare(nickName) != 0){
+			$('#webpal').html(username);
+		}
 	});
 
 	socket.on('is_offline', username => {
