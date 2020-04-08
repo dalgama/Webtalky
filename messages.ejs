@@ -20,6 +20,7 @@
 	<h1><%= nickName %></h1>
 	<h1 id="topic"><%= topic %></h1>
 	<script>var nickName = <%- JSON.stringify(nickName) %>;</script>
+	<script>var topic = <%- JSON.stringify(topic) %>;</script>
 	
 	<form action="/logout?_method=DELETE" method="POST">
         <button type="submit" class ="logout">Log Out</button>

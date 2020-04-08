@@ -133,12 +133,16 @@ io.sockets.on('connection', socket => {
 
     socket.on('user_login', (username, topic) => {
         socket.username = username;
+        socket.other = "Pending..."
         if (usersPerTopic[topic] == null)
         {
           usersPerTopic[topic] = [];
         }
+        if (usersPerTopic[topic].length > 0) {
+          socket.other = usersPerTopic[topic][usersPerTopic[topic].length -1];
+        }
         usersPerTopic[topic].push(username);
-        io.emit('is_online', socket.username);
+        io.emit('is_online', socket.username, socket.other);
     });
 
     socket.on('disconnect', () => {

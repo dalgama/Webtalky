@@ -29,13 +29,15 @@ window.onload = function () {
 		console.log(data);
 	});
 
-	socket.on('is_online', username => {
+	socket.on('is_online', (username, other) => {
 		let online_status = $('<div>');
 		online_status.html('🔵 <i>' + username + ' join the chat.</i>');
 		online_status.addClass('reply');
 		$('#conversation').append(online_status);
 		if (username.localeCompare(nickName) != 0){
 			$('#webpal').html(username);
+		} else {
+			$('#webpal').html(other);
 		}
 	});
 
@@ -44,7 +46,7 @@ window.onload = function () {
 		offline_status.html(username);
 		offline_status.addClass('reply');
 		$('#conversation').append(offline_status);
-		$('#webpal').html = 'Penging...';
+		$('#webpal').html = 'Pending...';
 	});
 
 	socket.emit('user_login', nickName, topic);
