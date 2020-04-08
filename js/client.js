@@ -2,23 +2,17 @@ window.onload = function () {
 	let socket = io.connect('http://localhost:3031');
 	let latestReply = document.getElementById("latest-reply");
 	let inputField = document.getElementById("inputField");
-	let topic = document.getElementById("topic").value;
 	console.log(nickName);
 
 	function addMessages(message) {
 		let newReply = document.createElement("div");
-		/*		if (localeCompare(message.username, nickName) == 0){
-			newReply.classList.add("reply", "from-me");
-		} else {
-			newReply.classList.add("reply", "from-other");
-		}*/ 
 		newReply.classList.add("reply", "from-other");
 		let msg = `<h4> ${message.username} </h4><p>  ${message.msg} </p>`
 		newReply.innerHTML = msg;
 		document.getElementById("conversation").appendChild(newReply);
 	}
 	$('#send-button').click(function () {
-		socket.emit('chat_message', { msg: inputField.value });
+		socket.emit('chat_message', { msg: inputField.value, topic: topic });
 		inputField.value = "";
 	});
 	socket.on('chat_message', data => {
