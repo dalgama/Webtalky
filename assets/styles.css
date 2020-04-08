@@ -263,8 +263,9 @@ textarea {
   width: 640px;
   height: 540px;
   background-image:url('../images/background.png');
-  background-size: contain;
+  background-size: auto;
   border:1px solid #eee;
+  display:table;
 }
 
 #reply-box{
@@ -277,6 +278,7 @@ textarea {
   width:100%;
   bottom:0px;
   padding:1.5%;
+  display: flex;
    color: white;
     background-color:#5f6caf;
    -moz-border-radius:0 0 40px 40px;

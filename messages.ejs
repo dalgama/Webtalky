@@ -28,7 +28,8 @@
             <h2> Enjoy your chat!! </h2>
         </p>
         <p id="intro_para">
-            <h2> Learn something new about this topic!! </h2>
+			<h2> Learn something new about <span id="topic"><%= topic %></span>! </h2>			
+			<script>var topic = <%- JSON.stringify(topic) %>;</script>
         </p>
     </div>
 	<br>

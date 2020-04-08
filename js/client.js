@@ -2,10 +2,16 @@ window.onload = function () {
 	let socket = io.connect('http://localhost:3031');
 	let latestReply = document.getElementById("latest-reply");
 	let inputField = document.getElementById("inputField");
+	let topic = document.getElementById("topic").value;
 	console.log(nickName);
 
 	function addMessages(message) {
 		let newReply = document.createElement("div");
+		/*		if (localeCompare(message.username, nickName) == 0){
+			newReply.classList.add("reply", "from-me");
+		} else {
+			newReply.classList.add("reply", "from-other");
+		}*/ 
 		newReply.classList.add("reply", "from-other");
 		let msg = `<h4> ${message.username} </h4><p>  ${message.msg} </p>`
 		newReply.innerHTML = msg;
@@ -23,12 +29,16 @@ window.onload = function () {
 		console.log(data);
 	});
 
-	socket.on('is_online', username => {
+	socket.on('is_online', (username, other, topic) => {
 		let online_status = $('<div>');
 		online_status.html('🔵 <i>' + username + ' join the chat.</i>');
 		online_status.addClass('reply');
 		$('#conversation').append(online_status);
-		$('#webpal').html(username);
+		if (username.localeCompare(nickName) != 0){
+			$('#webpal').html(username);
+		} else {
+			$('#webpal').html(other);
+		}
 	});
 
 	socket.on('is_offline', username => {
@@ -36,8 +46,8 @@ window.onload = function () {
 		offline_status.html(username);
 		offline_status.addClass('reply');
 		$('#conversation').append(offline_status);
-		$('#webpal').html = 'Penging...';
+		$('#webpal').html = 'Pending...';
 	});
 
-	socket.emit('user_login', nickName);
+	socket.emit('user_login', nickName, topic);
 }

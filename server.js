@@ -66,8 +66,9 @@ app.post('/login', async(req,res) => {
 
 app.post('/chat', (req, res) => {
     nickName = req.body.nickName;
+    topic = req.body.topicValues;
     console.log(`data passed to chat ${nickName}`);
-    res.render(__dirname + '/messages.ejs', { nickName: nickName });
+    res.render(__dirname + '/messages.ejs', { topic : topic, nickName: nickName });
 });
 
 app.post('/topicSelect', (req, res) => {
@@ -124,15 +125,24 @@ let addUserDdb = function (id,nickName,hashedPassword) {
 }
 
 var connections = [];
-
+let usersPerTopic = {};
 io.sockets.on('connection', socket => {
     socket.emit('connect', 'connection established');
     connections.push(socket);
     console.log('Connected: %s connected,  id %s', connections.length, socket.id);
 
-    socket.on('user_login', (username) => {
+    socket.on('user_login', (username, topic) => {
         socket.username = username;
-        io.emit('is_online', socket.username);
+        socket.other = "Pending..."
+        if (usersPerTopic[topic] == null)
+        {
+          usersPerTopic[topic] = [];
+        }
+        if (usersPerTopic[topic].length > 0) {
+          socket.other = usersPerTopic[topic][usersPerTopic[topic].length -1];
+        }
+        usersPerTopic[topic].push(username);
+        io.emit('is_online', socket.username, socket.other);
     });
 
     socket.on('disconnect', () => {
