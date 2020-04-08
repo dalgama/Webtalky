@@ -19,7 +19,7 @@ To run project:
 This will create local server that has conection to AWS database
 
 Usage:
-- Create atleast two users, or use already existant users: {user: test@test.com pwd: test} and {test123@test pwd: test123}
+- Create atleast two users, or use already existing users: {user: test@test.com pwd: test} and {test123@test pwd: test123}
 - log in two diferent account
 - select topics
 - start chating
@@ -75,7 +75,7 @@ Deliverable 4:
   - Users send and receive messages
   - Users notified every time a new user logs into the chat
   - Users notified when users log off
-  - Withing the chat, each user is identified by their nickname
+  - Withing the chat, each user is identified by their nickname. To keep the anonymity aspect, emails are not disclosed
 - Login system:
   - We have a signin system and a register system both are achieved by fetching and putting data to our database.
   - We also have feedback system for the client, to mention what state their account is in such as if our system successfully 
