@@ -1,5 +1,7 @@
 # csi3140-winter2020-project-csi3140project_don_olga
 
+Project video: https://www.youtube.com/watch?v=hzX7tOk6QIY&feature=youtu.be
+
 Team Member 1:
 Name: Don Mariyan Dilanga Algama
 Student Number: 8253677
