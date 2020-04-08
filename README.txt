@@ -71,7 +71,11 @@ In progress: Msg, conversaton, topic table API implimentation
 	
 Deliverable 4:
 
-- Chat works
+- Chat works:
+  - Users send and receive messages
+  - Users notified every time a new user logs into the chat
+  - Users notified when users log off
+  - Withing the chat, each user is identified by their nickname
 - Login system:
   - We have a signin system and a register system both are achieved by fetching and putting data to our database.
   - We also have feedback system for the client, to mention what state their account is in such as if they successfully 
