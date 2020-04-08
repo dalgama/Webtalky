@@ -133,7 +133,9 @@ io.sockets.on('connection', socket => {
 
     socket.on('user_login', (username, topic) => {
         socket.username = username;
-        socket.other = "Pending..."
+        socket.join(topic);
+        socket.other = "Pending...";
+        socket.topic = topic;
         if (usersPerTopic[topic] == null)
         {
           usersPerTopic[topic] = [];
@@ -142,18 +144,19 @@ io.sockets.on('connection', socket => {
           socket.other = usersPerTopic[topic][usersPerTopic[topic].length -1];
         }
         usersPerTopic[topic].push(username);
-        io.emit('is_online', socket.username, socket.other);
+        io.to(socket.topic).emit('is_online', socket.username, socket.other);
     });
 
-    socket.on('disconnect', () => {
+    socket.on('disconnect', (reason) => {
         console.log(`Socket ${socket.id} disconnected.`);
+        console.log(reason);
         connections.splice(connections.indexOf(socket), 1);
-        io.emit('is_offline', '🔴 <i>' + socket.username + ' left the chat..</i>');
+        io.to(socket.topic).emit('is_offline', '🔴 <i>' + socket.username + ' left the chat..</i>');
     });
 
     socket.on('chat_message', (msg) => {
         msg.username = socket.username;
-        io.emit('chat_message', msg)
+        io.to(msg.topic).emit('chat_message', msg)
     });
 });
 

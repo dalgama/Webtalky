@@ -12,7 +12,7 @@ window.onload = function () {
 		document.getElementById("conversation").appendChild(newReply);
 	}
 	$('#send-button').click(function () {
-		socket.emit('chat_message', { msg: inputField.value });
+		socket.emit('chat_message', { msg: inputField.value, topic: topic });
 		inputField.value = "";
 	});
 	socket.on('chat_message', data => {
