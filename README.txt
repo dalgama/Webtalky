@@ -74,8 +74,8 @@ Deliverable 4:
 - Chat works
 - Login system:
   - We have a signin system and a register system both are achieved by fetching and putting data to our database.
-  - We also have feedback system for the client, to mention what state their account is in such as if they successfully 
-    registered their account, logged in with the correct creditials or why their login didn't work.
+  - We also have feedback system for the client, to mention what state their account is in such as if our system successfully 
+    registered their account, if the client logged in with the correct creditials or why their login didn't work.
 - Information stored and retrieved from DDB
 - Fully functional API to access data
 - Updated test cases
